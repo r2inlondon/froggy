@@ -3,7 +3,7 @@ const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
 // Variables
-let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - frogSize, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = 14, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
+let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - frogSize, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
 let keys = [];
 
 // Functions
@@ -177,10 +177,7 @@ function moveFrog(e){
         // up frog's jump length
         yFrog += yJump;
     }    
-    // clear canvas
-    // ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-    // draw frog on new position
-    // drawFrogImage(xFrog, yFrog);
+    
     // check if you won
     didYouWin(yFrog);
 
@@ -243,7 +240,7 @@ function startGame(){
     drawFrogImage();
 
 
-    const yLane = 80;
+    const yLane = 92;
     let traffic = carsAndStreet(yLane, 3, 1, 3, 0.5);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
