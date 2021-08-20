@@ -3,7 +3,7 @@ const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
 // Variables
-let xFrogStart = 130, xFrog = 126, yFrog = 128, frogSize = 16, xJump = 28, yJump = 14, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
+let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - frogSize, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = 14, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
 let keys = [];
 
 // Functions
@@ -239,7 +239,7 @@ function startGame(){
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
     // Reset Frog to start game
-    xFrog = 126, yFrog = xFrogStart;      
+    xFrog = xFrogStart, yFrog = yFrogStart;      
     drawFrogImage();
 
 
