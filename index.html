@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froggy</title>
+    <link rel="shortcut icon" href="img/frog.svg"/>
+</head>
+<body>
+
+   
+
+    <div class="container">
+        <canvas id="myCanvas" class="center">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
+    </div>
+
+    <div class="start" >
+        <button onClick="startGame()" >Start Game</button>
+    </div>
+    
+    <style>
+        
+        .start{
+            margin-top: 5vh;
+            text-align: center;
+        }
+
+        .start button{            
+                padding: 20px 40px;            
+        }
+
+        .container {
+            text-align:center;
+        }
+        #myCanvas {        
+            margin-top: 5vh;    
+            width: 400px;
+            height: 400px;
+            border:1px solid #000000;
+        }
+        
+
+    </style>
+
+    
+</body>
+
+<script src="app.js"></script>
+</html>
