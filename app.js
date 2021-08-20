@@ -3,7 +3,7 @@ const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
 // Variables
-let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - frogSize, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
+let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
 let keys = [];
 
 // Functions
@@ -173,7 +173,7 @@ function moveFrog(e){
         yFrog -= yJump;
     }
     // up - canvas limit
-    if(keys[40] && yFrog < xFrogStart ){
+    if(keys[40] && yFrog < yFrogStart ){
         // up frog's jump length
         yFrog += yJump;
     }    
