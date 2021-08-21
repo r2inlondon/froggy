@@ -4,7 +4,7 @@ const myCanvas = document.getElementById('myCanvas'),
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
-    carWidthRight = 35, carHeightRight = 20, carWidthRight2 = 40, carHeightRight2 = 25, carWidthLeft = 35, carHeightLeft = 20, streetHeight = 60;
+    carWidthRight = 35, carHeightRight = 20, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 60;
 let keys = [];
 
 // Functions
@@ -23,10 +23,10 @@ function drawCarImageRight(x, y){
     ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
 }
 
-function drawCarImageRight2(x, y){        
+function drawCarImageLeft2(x, y){        
     carImageRight = new Image();
-    carImageRight.src = 'img/red_car_right.png';    
-    ctx.drawImage(carImageRight, x, y, carWidthRight2, carHeightRight2);            
+    carImageRight.src = 'img/red_car_left2.png';    
+    ctx.drawImage(carImageRight, x, y, carWidthLeft2, carHeightLeft2);            
 }
 
 class Car {
@@ -39,9 +39,6 @@ class Car {
 
     
     drawLeft(){
-        //clear car previus position
-        // ctx.clearRect(this.x + 30, this.y, carWidthLeft, carHeightLeft);        
-        
         // reset car
         if(this.x < - carWidthLeft ){
             this.x = 330;
@@ -58,9 +55,6 @@ class Car {
     }
 
     drawRight(){
-        //clear car previus position
-        // ctx.clearRect(this.x - 28, this.y, carWidthRight, carHeightRight);
-
         // reset car
         if(this.x > 300 ){
             this.x = 0;
@@ -76,24 +70,24 @@ class Car {
         this.collision();
     }
 
-    drawRight2(){
-
+      
+    drawLeft2(){
         // reset car
-        if(this.x > 300 ){
-            this.x = 0;
+        if(this.x < - carWidthLeft2 ){
+            this.x = 330;
         }    
         // draw car
-        drawCarImageRight2(this.x, this.y);
+        drawCarImageLeft2(this.x, this.y);
 
         // move car position
-        this.x += this.speed;     
-        drawCarImageRight2(this.x, this.y);        
+        this.x -= this.speed;     
+        drawCarImageLeft2(this.x, this.y);        
 
-        // check for collisions
+        // check for collisions        
         this.collision();
     }
 
-       
+      
     collision(){
         if( this.x < xFrog + frogSize &&
             this.x + carWidthLeft > xFrog &&
@@ -132,12 +126,12 @@ function carsAndStreet(streetY, blueCarsNum, blueCarsSpeed, redCarsNum, redCarsS
 
     const blueCar = slowLaneLeft(blueCarsNum, streetY , blueCarsSpeed);
     const redCar = slowLaneRight(redCarsNum, streetY + 21, redCarsSpeed);
-    const redCar2 = slowLaneRight(redCarsNum2, streetY + 40, redCarsSpeed2);
+    const leftCar2 = slowLaneLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
     
     const traffic = {
         blueCar: blueCar,
         redCar: redCar,
-        redCar2: redCar2,
+        leftCar2: leftCar2,
         street: function (yLane){
     
             let line = streetHeight / 3;
@@ -242,7 +236,7 @@ function draw(traffic1, yTraffic1){
         
     traffic1.blueCar.forEach( car => car.drawLeft());
     traffic1.redCar.forEach( car => car.drawRight());
-    traffic1.redCar2.forEach( car => car.drawRight2());
+    traffic1.leftCar2.forEach( car => car.drawLeft2());
     
     
     drawFrogImage(xFrog, yFrog);
