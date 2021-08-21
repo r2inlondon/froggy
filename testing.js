@@ -5,7 +5,7 @@
 const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
-let x = 20, y = 80, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15, streetHeight = 40;
+let x = 20, y = 70, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15, streetHeight = 60;
 
 function drawCarImageLeft(){        
     carImageLeft = new Image();
@@ -16,8 +16,10 @@ function drawCarImageLeft(){
 }
 
 function street(){
-    let streetBorder = (streetHeight / 2) + y;
-    let centreLine = 5;
+    
+    let line = streetHeight / 3;
+        streetBorder = line + y,
+        centreLine = 5;
     
     ctx.beginPath();
     ctx.rect(-5, y, 310, streetHeight);
@@ -25,15 +27,23 @@ function street(){
     ctx.fill();
     ctx.stroke();
 
-    for(let i = 0; i < 9; i++){
-        ctx.beginPath();
-        ctx.strokeStyle = "gray";
-        ctx.moveTo(centreLine, streetBorder);
-        ctx.lineTo(centreLine += 30, streetBorder);
-        ctx.closePath();
-        ctx.stroke();
-        centreLine += 30
+    for(let i = 0; i < 2; i++ ){
+
+        for(let i = 0; i < 5; i++){
+            ctx.beginPath();
+            ctx.strokeStyle = "gray";
+            ctx.moveTo(centreLine, streetBorder);
+            ctx.lineTo(centreLine += 30, streetBorder);
+            ctx.closePath();
+            ctx.stroke();
+            centreLine += 30
+            console.log(streetBorder);
+        }
+
+        streetBorder += line;
+        centreLine = 5;
     }
+
 }
 
 
@@ -54,5 +64,5 @@ function startGame(){
         
 }
 
-street();
 drawCarImageLeft();
+street();
