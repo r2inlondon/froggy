@@ -12,7 +12,8 @@ let keys = [];
 
 function drawCarImageLeft(x, y){        
     carImageLeft = new Image();
-    carImageLeft.src = 'img/car-mint.jpg';
+    // carImageLeft.src = 'img/car-mint.jpg';
+    carImageLeft.src = 'img/favpng_car.png';
     
     ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);
             

@@ -9,7 +9,7 @@ let x = 20, y = 20, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, 
 
 function drawCarImageLeft(){        
     carImageLeft = new Image();
-    carImageLeft.src = 'img/purple-car.svg';
+    carImageLeft.src = 'img/favpng_car.png';
     
     ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);
             
