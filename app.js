@@ -99,7 +99,7 @@ class Car {
 }
 
 // create cars, in the lane, direction left
-function slowLaneLeft(cars, y, speed){
+function laneDirectionLeft(cars, y, speed){
     let slowLaneCarDistance = (myCanvas.width / cars ) - 40;
     
     let activeCars = [];
@@ -110,7 +110,7 @@ function slowLaneLeft(cars, y, speed){
 }
 
 // create cars, in the lane, direction right
-function slowLaneRight(cars, y, speed){
+function laneDirectionRight(cars, y, speed){
     let slowLaneCarDistance = (myCanvas.width / cars ) - 40;
 
     let activeCars = [];
@@ -123,9 +123,9 @@ function slowLaneRight(cars, y, speed){
 function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, redCarsNum2, redCarsSpeed2 ){
     
 
-    const leftCar1 = slowLaneLeft(leftCars1Num, streetY , leftCars1Speed);
-    const rightCar = slowLaneRight(rightCarsNum, streetY + 21, rightCarsSpeed);
-    const leftCar2 = slowLaneLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
+    const leftCar1 = laneDirectionLeft(leftCars1Num, streetY , leftCars1Speed);
+    const rightCar = laneDirectionRight(rightCarsNum, streetY + 21, rightCarsSpeed);
+    const leftCar2 = laneDirectionLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
     
     const traffic = {
         leftCar1: leftCar1,
