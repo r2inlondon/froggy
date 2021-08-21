@@ -11,29 +11,28 @@ let keys = [];
 
 // **** Cars ****
 
-function drawCarImageLeft(x, y){        
+function drawYellowCarLeft(x, y){        
     carImageLeft = new Image();    
     carImageLeft.src = 'img/yellow_car_left.png';
     ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);            
 }
 
-function drawCarImageRight(x, y){        
+function drawGreenCarRight(x, y){        
     carImageRight = new Image();
     carImageRight.src = 'img/green_car_right.png';    
     ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
 }
 
-function drawCarImageLeft2(x, y){        
+function drawRedCarRight(x, y){        
     carImageRight = new Image();
     carImageRight.src = 'img/red_car_left2.png';    
     ctx.drawImage(carImageRight, x, y, carWidthLeft2, carHeightLeft2);            
 }
 
 class Car {
-    constructor(x, y, color, speed){
+    constructor(x, y, speed){
         this.x = x;
-        this.y = y;
-        this.color = color;
+        this.y = y;        
         this.speed = speed;
     }
 
@@ -44,11 +43,11 @@ class Car {
             this.x = 330;
         }    
         // draw car
-        drawCarImageLeft(this.x, this.y);
+        drawYellowCarLeft(this.x, this.y);
 
         // move car position
         this.x -= this.speed;     
-        drawCarImageLeft(this.x, this.y);        
+        drawYellowCarLeft(this.x, this.y);        
 
         // check for collisions        
         this.collision();
@@ -60,11 +59,11 @@ class Car {
             this.x = 0;
         }    
         // draw car
-        drawCarImageRight(this.x, this.y);
+        drawGreenCarRight(this.x, this.y);
 
         // move car position
         this.x += this.speed;     
-        drawCarImageRight(this.x, this.y);        
+        drawGreenCarRight(this.x, this.y);        
 
         // check for collisions
         this.collision();
@@ -77,11 +76,11 @@ class Car {
             this.x = 330;
         }    
         // draw car
-        drawCarImageLeft2(this.x, this.y);
+        drawRedCarRight(this.x, this.y);
 
         // move car position
         this.x -= this.speed;     
-        drawCarImageLeft2(this.x, this.y);        
+        drawRedCarRight(this.x, this.y);        
 
         // check for collisions        
         this.collision();
@@ -105,7 +104,7 @@ function slowLaneLeft(cars, y, speed){
     
     let activeCars = [];
     for(let i = 0; i < cars; i++ ){
-        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, "blue", speed));
+        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, speed));
     }
     return activeCars;
 }
@@ -116,21 +115,21 @@ function slowLaneRight(cars, y, speed){
 
     let activeCars = [];
     for(let i = 0; i < cars; i++ ){
-        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, "red", speed));
+        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, speed));
     }
     return activeCars;
 }
 
-function carsAndStreet(streetY, blueCarsNum, blueCarsSpeed, redCarsNum, redCarsSpeed, redCarsNum2, redCarsSpeed2 ){
+function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, redCarsNum2, redCarsSpeed2 ){
     
 
-    const blueCar = slowLaneLeft(blueCarsNum, streetY , blueCarsSpeed);
-    const redCar = slowLaneRight(redCarsNum, streetY + 21, redCarsSpeed);
+    const leftCar1 = slowLaneLeft(leftCars1Num, streetY , leftCars1Speed);
+    const rightCar = slowLaneRight(rightCarsNum, streetY + 21, rightCarsSpeed);
     const leftCar2 = slowLaneLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
     
     const traffic = {
-        blueCar: blueCar,
-        redCar: redCar,
+        leftCar1: leftCar1,
+        rightCar: rightCar,
         leftCar2: leftCar2,
         street: function (yLane){
     
@@ -234,8 +233,8 @@ function draw(traffic1, yTraffic1){
     
     traffic1.street(yTraffic1);
         
-    traffic1.blueCar.forEach( car => car.drawLeft());
-    traffic1.redCar.forEach( car => car.drawRight());
+    traffic1.leftCar1.forEach( car => car.drawLeft());
+    traffic1.rightCar.forEach( car => car.drawRight());
     traffic1.leftCar2.forEach( car => car.drawLeft2());
     
     
