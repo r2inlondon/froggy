@@ -43,11 +43,11 @@ class Car {
             this.x = 330;
         }    
         // draw car
-        drawYellowCarLeft(this.x, this.y);
+        drawRedCarRight(this.x, this.y);
 
         // move car position
         this.x -= this.speed;     
-        drawYellowCarLeft(this.x, this.y);        
+        drawRedCarRight(this.x, this.y);        
 
         // check for collisions        
         this.collision();
@@ -76,11 +76,11 @@ class Car {
             this.x = 330;
         }    
         // draw car
-        drawRedCarRight(this.x, this.y);
+        drawYellowCarLeft(this.x, this.y);
 
         // move car position
         this.x -= this.speed;     
-        drawRedCarRight(this.x, this.y);        
+        drawYellowCarLeft(this.x, this.y);        
 
         // check for collisions        
         this.collision();
@@ -264,7 +264,7 @@ function startGame(){
 
 
     const yTraffic1 = 71;    
-    let traffic1 = carsAndStreet(yTraffic1, 2, 1, 3, 0.5, 1, 1.5);
+    let traffic1 = carsAndStreet(yTraffic1, 1, 3, 3, 1, 2, 0.2);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
