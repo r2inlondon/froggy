@@ -20,13 +20,14 @@ function street(){
     let line = streetHeight / 3;
         streetBorder = line + y,
         centreLine = 5;
-    
+    // motorway
     ctx.beginPath();
     ctx.rect(-5, y, 310, streetHeight);
     ctx.fillStyle = "#CAC4BD";
     ctx.fill();
     ctx.stroke();
 
+    // add centre lines
     for(let i = 0; i < 2; i++ ){
 
         for(let i = 0; i < 5; i++){
@@ -45,7 +46,6 @@ function street(){
     }
 
 }
-
 
       
 function animate(){

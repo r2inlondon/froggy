@@ -4,7 +4,7 @@ const myCanvas = document.getElementById('myCanvas'),
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
-    carWidthRight = 35, carHeightRight = 20, carWidthLeft = 35, carHeightLeft = 20, streetHeight = 40;
+    carWidthRight = 35, carHeightRight = 20, carWidthLeft = 35, carHeightLeft = 20, streetHeight = 60;
 let keys = [];
 
 // Functions
@@ -119,27 +119,54 @@ function carsAndStreet(streetY, blueCarsNum, blueCarsSpeed, redCarsNum, redCarsS
         blueCar: blueCar,
         redCar: redCar,
         street: function (yLane){
-            // let streetBorder = yLane;
+    
+            // let streetBorder = (streetHeight / 2) + yLane;
             // let centreLine = 5;
 
-            let streetBorder = (streetHeight / 2) + yLane;
-            let centreLine = 5;
-            
+            let line = streetHeight / 3;
+            streetBorder = line + yLane,
+            centreLine = 5;
+
+            // motorway
             ctx.beginPath();
             ctx.rect(-5, yLane, 310, streetHeight);
             ctx.fillStyle = "#CAC4BD";
             ctx.fill();
             ctx.stroke();
 
-    for(let i = 0; i < 9; i++){
-        ctx.beginPath();
-        ctx.strokeStyle = "gray";
-        ctx.moveTo(centreLine, streetBorder);
-        ctx.lineTo(centreLine += 30, streetBorder);
-        ctx.closePath();
-        ctx.stroke();
-        centreLine += 30
-    }
+            // add centre lines
+            for(let i = 0; i < 2; i++ ){
+
+                for(let i = 0; i < 5; i++){
+                    ctx.beginPath();
+                    ctx.strokeStyle = "gray";
+                    ctx.moveTo(centreLine, streetBorder);
+                    ctx.lineTo(centreLine += 30, streetBorder);
+                    ctx.closePath();
+                    ctx.stroke();
+                    centreLine += 30                    
+                }
+
+                streetBorder += line;
+                centreLine = 5;
+            }
+
+
+            // ctx.beginPath();
+            // ctx.rect(-5, yLane, 310, streetHeight);
+            // ctx.fillStyle = "#CAC4BD";
+            // ctx.fill();
+            // ctx.stroke();
+
+            // for(let i = 0; i < 9; i++){
+            //     ctx.beginPath();
+            //     ctx.strokeStyle = "gray";
+            //     ctx.moveTo(centreLine, streetBorder);
+            //     ctx.lineTo(centreLine += 30, streetBorder);
+            //     ctx.closePath();
+            //     ctx.stroke();
+            //     centreLine += 30
+            // }
                    
         }
     }
@@ -242,7 +269,7 @@ function startGame(){
     drawFrogImage();
 
 
-    const yTraffic1 = 92;    
+    const yTraffic1 = 71;    
     let traffic1 = carsAndStreet(yTraffic1, 2, 1, 3, 0.5);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
