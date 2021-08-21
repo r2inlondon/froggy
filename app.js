@@ -150,23 +150,6 @@ function carsAndStreet(streetY, blueCarsNum, blueCarsSpeed, redCarsNum, redCarsS
                 streetBorder += line;
                 centreLine = 5;
             }
-
-
-            // ctx.beginPath();
-            // ctx.rect(-5, yLane, 310, streetHeight);
-            // ctx.fillStyle = "#CAC4BD";
-            // ctx.fill();
-            // ctx.stroke();
-
-            // for(let i = 0; i < 9; i++){
-            //     ctx.beginPath();
-            //     ctx.strokeStyle = "gray";
-            //     ctx.moveTo(centreLine, streetBorder);
-            //     ctx.lineTo(centreLine += 30, streetBorder);
-            //     ctx.closePath();
-            //     ctx.stroke();
-            //     centreLine += 30
-            // }
                    
         }
     }
