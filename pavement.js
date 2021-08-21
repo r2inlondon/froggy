@@ -5,7 +5,7 @@
 const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
-let x = 20, y = 20, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15, streetHeight = 40;
+let x = 20, y = 80, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15, streetHeight = 40;
 
 function drawCarImageLeft(){        
     carImageLeft = new Image();
@@ -16,11 +16,11 @@ function drawCarImageLeft(){
 }
 
 function street(){
-    let streetBorder = streetHeight;
+    let streetBorder = (streetHeight / 2) + y;
     let centreLine = 5;
     
     ctx.beginPath();
-    ctx.rect(-5, 20, 310, streetHeight);
+    ctx.rect(-5, y, 310, streetHeight);
     ctx.fillStyle = "#CAC4BD";
     ctx.fill();
     ctx.stroke();
@@ -53,3 +53,6 @@ function startGame(){
     animate();
         
 }
+
+street();
+drawCarImageLeft();

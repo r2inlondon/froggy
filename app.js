@@ -3,7 +3,8 @@ const myCanvas = document.getElementById('myCanvas'),
       ctx = myCanvas.getContext('2d');
 
 // Variables
-let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15;
+let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
+    carWidthRight = 35, carHeightRight = 20, carWidthLeft = 35, carHeightLeft = 20, streetHeight = 40;
 let keys = [];
 
 // Functions
@@ -111,36 +112,35 @@ function slowLaneRight(cars, y, speed){
 function carsAndStreet(streetY, blueCarsNum, blueCarsSpeed, redCarsNum, redCarsSpeed ){
     
 
-    const blueCar = slowLaneLeft(blueCarsNum, streetY + 2, blueCarsSpeed);
-    const redCar = slowLaneRight(redCarsNum, streetY + 23, redCarsSpeed);
+    const blueCar = slowLaneLeft(blueCarsNum, streetY , blueCarsSpeed);
+    const redCar = slowLaneRight(redCarsNum, streetY + 21, redCarsSpeed);
     
     const traffic = {
         blueCar: blueCar,
         redCar: redCar,
         street: function (yLane){
-            let streetBorder = yLane;
-            let centreLine = 5;    
-        
-            // draw central line
-            for(let i = 0; i < 9; i++){
-                ctx.beginPath();
-                ctx.strokeStyle = "gray";
-                ctx.moveTo(centreLine, (streetBorder + 40 ) - 20);
-                ctx.lineTo(centreLine += 30, (streetBorder + 40 ) - 20);
-                ctx.closePath();
-                ctx.stroke();
-                centreLine += 30
-            }
-            // draw street
-            for(let i = 0; i < 2; i++){
-                ctx.beginPath();
-                ctx.strokeStyle = "black";
-                ctx.moveTo(0, streetBorder);    
-                ctx.lineTo(myCanvas.width, streetBorder);
-                streetBorder += 40;
-                ctx.closePath();    
-                ctx.stroke();
-            }
+            // let streetBorder = yLane;
+            // let centreLine = 5;
+
+            let streetBorder = (streetHeight / 2) + yLane;
+            let centreLine = 5;
+            
+            ctx.beginPath();
+            ctx.rect(-5, yLane, 310, streetHeight);
+            ctx.fillStyle = "#CAC4BD";
+            ctx.fill();
+            ctx.stroke();
+
+    for(let i = 0; i < 9; i++){
+        ctx.beginPath();
+        ctx.strokeStyle = "gray";
+        ctx.moveTo(centreLine, streetBorder);
+        ctx.lineTo(centreLine += 30, streetBorder);
+        ctx.closePath();
+        ctx.stroke();
+        centreLine += 30
+    }
+                   
         }
     }
     return traffic;
@@ -210,11 +210,12 @@ function notification(message){
 function draw(traffic, yLane){
 
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+    
+    traffic.street(yLane);
         
     traffic.blueCar.forEach( car => car.drawLeft());
     traffic.redCar.forEach( car => car.drawRight());
     
-    traffic.street(yLane);
     
     drawFrogImage(xFrog, yFrog);
                       
@@ -242,7 +243,8 @@ function startGame(){
 
 
     const yLane = 92;
-    let traffic = carsAndStreet(yLane, 3, 1, 3, 0.5);
+    // const yLane = 90;
+    let traffic = carsAndStreet(yLane, 2, 1, 3, 0.5);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
