@@ -227,26 +227,26 @@ function notification(message){
 
 // *** Game On ***
 
-function draw(traffic1, yTraffic1){
+function draw(motorwayOne, motorwayOneYpos){
 
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
-    traffic1.street(yTraffic1);
+    motorwayOne.street(motorwayOneYpos);
         
-    traffic1.leftCar1.forEach( car => car.drawLeft());
-    traffic1.rightCar.forEach( car => car.drawRight());
-    traffic1.leftCar2.forEach( car => car.drawLeft2());
+    motorwayOne.leftCar1.forEach( car => car.drawLeft());
+    motorwayOne.rightCar.forEach( car => car.drawRight());
+    motorwayOne.leftCar2.forEach( car => car.drawLeft2());
     
     
     drawFrogImage(xFrog, yFrog);
                       
 }
 
-function animate(traffic1, yTraffic1){    
+function animate(motorwayOne, motorwayOneYpos){    
     // creates the animation loop    
-    requestAnimationFrame(() => animate(traffic1, yTraffic1));
+    requestAnimationFrame(() => animate(motorwayOne, motorwayOneYpos));
             
-    draw(traffic1, yTraffic1);    
+    draw(motorwayOne, motorwayOneYpos);    
 }
 
 let gameOn = false;
@@ -263,12 +263,12 @@ function startGame(){
     drawFrogImage();
 
 
-    const yTraffic1 = 71;    
-    let traffic1 = carsAndStreet(yTraffic1, 1, 3, 3, 1, 2, 0.2);
+    const motorwayOneYpos = 71;    
+    let motorwayOne = carsAndStreet(motorwayOneYpos, 1, 3, 3, 1, 2, 0.2);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
-        animate(traffic1, yTraffic1);
+        animate(motorwayOne, motorwayOneYpos);
         gameOn = true;
     }            
 }
