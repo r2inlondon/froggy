@@ -7,13 +7,18 @@ const myCanvas = document.getElementById('myCanvas'),
 
 let x = 20, y = 70, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, carHeightLeft = 15, streetHeight = 60;
 
-function drawCarImageLeft(){        
-    carImageLeft = new Image();
-    carImageLeft.src = 'img/yellow_car_left.png';
-    
-    ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);
-            
+const greenCar = 'img/goingRight/green_car_right.png', orangeCar = 'img/goingRight/oragen_car_right.png', ambulance = 'img/goingRight/ambulance_right.png';
+
+const cars = [greenCar, orangeCar, ambulance, greenCar, orangeCar, ambulance];
+let rndInt = Math.floor(Math.random() * 5)
+console.log(rndInt);
+
+function drawCarRight(x, y){    
+    carImageRight = new Image();
+    carImageRight.src = cars[rndInt];    
+    ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
 }
+
 
 function street(){
     
@@ -37,8 +42,7 @@ function street(){
             ctx.lineTo(centreLine += 30, streetBorder);
             ctx.closePath();
             ctx.stroke();
-            centreLine += 30
-            console.log(streetBorder);
+            centreLine += 30            
         }
 
         streetBorder += line;
@@ -52,7 +56,7 @@ function animate(){
             
     street();
 
-    drawCarImageLeft();
+    drawCarRight(10,92);
     
     requestAnimationFrame(animate);    
     
@@ -64,5 +68,6 @@ function startGame(){
         
 }
 
-drawCarImageLeft();
+
 street();
+drawCarRight(10,92);
