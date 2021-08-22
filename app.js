@@ -4,23 +4,30 @@ const myCanvas = document.getElementById('myCanvas'),
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
-    carWidthRight = 35, carHeightRight = 20, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 60;
+    carWidthRight = 35, carHeightRight = 25, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 60;
 let keys = [];
 
 // Functions
 
-// **** Cars ****
-
-function drawYellowCarLeft(x, y){        
-    carImageLeft = new Image();    
-    carImageLeft.src = 'img/goingLeft/yellow_car_left.png';
-    ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);            
-}
+// Cars going right
 
 function drawGreenCarRight(x, y){        
     carImageRight = new Image();
     carImageRight.src = 'img/goingRight/green_car_right.png';    
     ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
+}
+
+function drawOrangeCarRight(x, y){        
+    carImageRight = new Image();
+    carImageRight.src = 'img/goingRight/oragen_car_right.png';    
+    ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
+}
+
+// Cars going left
+function drawYellowCarLeft(x, y){        
+    carImageLeft = new Image();    
+    carImageLeft.src = 'img/goingLeft/yellow_car_left.png';
+    ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);            
 }
 
 function drawRedCarLeft(x, y){        
@@ -124,7 +131,7 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
     
 
     const leftCar1 = laneDirectionLeft(leftCars1Num, streetY , leftCars1Speed);
-    const rightCar = laneDirectionRight(rightCarsNum, streetY + 21, rightCarsSpeed);
+    const rightCar = laneDirectionRight(rightCarsNum, streetY + 19, rightCarsSpeed);
     const leftCar2 = laneDirectionLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
     
     const traffic = {
