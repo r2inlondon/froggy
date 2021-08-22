@@ -16,7 +16,7 @@ const   greenCarRight = 'img/goingRight/green_car_right.png', orangeCarRight = '
         yellowCarLeft = 'img/goingLeft/yellow_car_left.png', redCarLeft2 = 'img/goingLeft/red_car_left2.png';
 
 const carsRight = [greenCarRight, orangeCarRight, ambulanceRight, blueCarRight];
-const carsLeft = [greenCarLeft, redCarLeft, yellowCarLeft, redCarLeft];
+const carsLeft = [greenCarLeft, redCarLeft2, yellowCarLeft, redCarLeft];
 
 class Car {
     constructor(x, y, speed, rndInt){
@@ -25,10 +25,9 @@ class Car {
         this.speed = speed;
         this.rndInt = rndInt;
     }
-
-    
+   
     drawLeft(){
-
+        // load image
         let carImageLeft = new Image();
         carImageLeft.src = carsLeft[this.rndInt]; 
         ctx.drawImage(carImageLeft, this.x, this.y, carWidthLeft, carHeightLeft);    
@@ -37,9 +36,6 @@ class Car {
         if(this.x < - carWidthLeft ){
             this.x = 330;
         }    
-        // draw car
-        // drawRedCarLeft(this.x, this.y);
-
         // move car position
         this.x -= this.speed;     
         ctx.drawImage(carImageLeft, this.x, this.y, carWidthLeft, carHeightLeft);   
@@ -49,7 +45,7 @@ class Car {
     }
 
     drawRight(){
-
+        // load image
         let carImageRight = new Image();
         carImageRight.src = carsRight[this.rndInt];    
         ctx.drawImage(carImageRight, this.x, this.y, carWidthRight, carHeightRight);            
@@ -58,8 +54,6 @@ class Car {
         if(this.x > 300 ){
             this.x = 0;
         }    
-        // // draw car
-        // drawCarRight(this.x, this.y);
 
         // move car position
         this.x += this.speed;     
@@ -70,21 +64,21 @@ class Car {
     }
 
       
-    drawLeft2(){
-        // reset car
-        if(this.x < - carWidthLeft2 ){
-            this.x = 330;
-        }    
-        // draw car
-        drawYellowCarLeft(this.x, this.y);
+    // drawLeft2(){
+    //     // reset car
+    //     if(this.x < - carWidthLeft2 ){
+    //         this.x = 330;
+    //     }    
+    //     // draw car
+    //     drawYellowCarLeft(this.x, this.y);
 
-        // move car position
-        this.x -= this.speed;     
-        drawYellowCarLeft(this.x, this.y);        
+    //     // move car position
+    //     this.x -= this.speed;     
+    //     drawYellowCarLeft(this.x, this.y);        
 
-        // check for collisions        
-        this.collision();
-    }
+    //     // check for collisions        
+    //     this.collision();
+    // }
 
       
     collision(){
@@ -109,7 +103,10 @@ function laneDirectionLeft(cars, y, speed){
     for(let i = 0; i < cars; i++ ){
         rndInt = Math.floor(Math.random() * 4)
         console.log(rndInt);
-        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, speed, rndInt));
+        activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
+
+        slowLaneCarDistance += slowLaneCarDistance
+
     }
     return activeCars;
 }
@@ -124,7 +121,9 @@ function laneDirectionRight(cars, y, speed){
 
     for(let i = 0; i < cars; i++ ){
         rndInt = Math.floor(Math.random() * 4)
-        activeCars.push(new Car(slowLaneCarDistance += slowLaneCarDistance, y, speed, rndInt));
+        activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
+
+        slowLaneCarDistance += slowLaneCarDistance
     }
     return activeCars;
 }
@@ -275,7 +274,7 @@ function startGame(){
 
     const motorwayOneYpos = 71;    
     // let motorwayOne = carsAndStreet(motorwayOneYpos, 1, 3, 3, 1, 2, 0.2);
-    let motorwayOne = carsAndStreet(motorwayOneYpos, 2, 3, 3, 1);
+    let motorwayOne = carsAndStreet(motorwayOneYpos, 3, 1, 3, 1);
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
