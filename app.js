@@ -33,7 +33,7 @@ class Car {
         ctx.drawImage(carImageLeft, this.x, this.y, carWidthLeft, carHeightLeft);    
 
         // reset car
-        if(this.x < - carWidthLeft ){
+        if(this.x < - 0 ){
             this.x = 330;
         }    
         // move car position
@@ -62,24 +62,6 @@ class Car {
         // check for collisions
         this.collision();
     }
-
-      
-    // drawLeft2(){
-    //     // reset car
-    //     if(this.x < - carWidthLeft2 ){
-    //         this.x = 330;
-    //     }    
-    //     // draw car
-    //     drawYellowCarLeft(this.x, this.y);
-
-    //     // move car position
-    //     this.x -= this.speed;     
-    //     drawYellowCarLeft(this.x, this.y);        
-
-    //     // check for collisions        
-    //     this.collision();
-    // }
-
       
     collision(){
         if( this.x < xFrog + frogSize &&
@@ -102,7 +84,7 @@ function laneDirectionLeft(cars, y, speed){
 
     for(let i = 0; i < cars; i++ ){
         rndInt = Math.floor(Math.random() * 4)
-        console.log(rndInt);
+        
         activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
 
         slowLaneCarDistance += slowLaneCarDistance
@@ -128,18 +110,18 @@ function laneDirectionRight(cars, y, speed){
     return activeCars;
 }
 
-// function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, redCarsNum2, redCarsSpeed2 ){
-    function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed ){
+function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, leftCars2Num, leftCars2Speed ){
+    // function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed ){
     
 
     const leftCar = laneDirectionLeft(leftCars1Num, streetY , leftCars1Speed);
     const rightCar = laneDirectionRight(rightCarsNum, streetY + 19, rightCarsSpeed);
-    // const leftCar2 = laneDirectionLeft(redCarsNum2, streetY + 40, redCarsSpeed2);
+    const leftCar2 = laneDirectionLeft(leftCars2Num, streetY + 40, leftCars2Speed);
     
     const traffic = {
         leftCar: leftCar,
         rightCar: rightCar,
-        // leftCar2: leftCar2,
+        leftCar2: leftCar2,
         street: function (yLane){
     
             let line = streetHeight / 3;
@@ -244,7 +226,7 @@ function draw(motorwayOne, motorwayOneYpos){
         
     motorwayOne.leftCar.forEach( car => car.drawLeft());
     motorwayOne.rightCar.forEach( car => car.drawRight());
-    // motorwayOne.leftCar2.forEach( car => car.drawLeft2());
+    motorwayOne.leftCar2.forEach( car => car.drawLeft());
     
     
     drawFrogImage(xFrog, yFrog);
@@ -273,8 +255,8 @@ function startGame(){
 
 
     const motorwayOneYpos = 71;    
-    // let motorwayOne = carsAndStreet(motorwayOneYpos, 1, 3, 3, 1, 2, 0.2);
-    let motorwayOne = carsAndStreet(motorwayOneYpos, 3, 1, 3, 1);
+    let motorwayOne = carsAndStreet(motorwayOneYpos, 2, 1, 3, 1, 2, 0.5);
+    
         
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){

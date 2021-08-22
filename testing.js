@@ -9,7 +9,7 @@ let x = 20, y = 70, carWidthRight = 30, carHeightRight = 15, carWidthLeft = 30, 
 
 const greenCar = 'img/goingRight/green_car_right.png', orangeCar = 'img/goingRight/oragen_car_right.png', ambulance = 'img/goingRight/ambulance_right.png';
 
-const cars = [greenCar, orangeCar, ambulance, greenCar, orangeCar, ambulance];
+const cars = [greenCar, orangeCarRight, ambulanceRight, greenCar, orangeCarRight, ambulanceRight];
 let rndInt = Math.floor(Math.random() * 5)
 console.log(rndInt);
 
