@@ -13,19 +13,19 @@ let keys = [];
 
 function drawYellowCarLeft(x, y){        
     carImageLeft = new Image();    
-    carImageLeft.src = 'img/yellow_car_left.png';
+    carImageLeft.src = 'img/goingLeft/yellow_car_left.png';
     ctx.drawImage(carImageLeft, x, y, carWidthLeft, carHeightLeft);            
 }
 
 function drawGreenCarRight(x, y){        
     carImageRight = new Image();
-    carImageRight.src = 'img/green_car_right.png';    
+    carImageRight.src = 'img/goingRight/green_car_right.png';    
     ctx.drawImage(carImageRight, x, y, carWidthRight, carHeightRight);            
 }
 
-function drawRedCarRight(x, y){        
+function drawRedCarLeft(x, y){        
     carImageRight = new Image();
-    carImageRight.src = 'img/red_car_left2.png';    
+    carImageRight.src = 'img/goingLeft/red_car_left2.png';    
     ctx.drawImage(carImageRight, x, y, carWidthLeft2, carHeightLeft2);            
 }
 
@@ -43,11 +43,11 @@ class Car {
             this.x = 330;
         }    
         // draw car
-        drawRedCarRight(this.x, this.y);
+        drawRedCarLeft(this.x, this.y);
 
         // move car position
         this.x -= this.speed;     
-        drawRedCarRight(this.x, this.y);        
+        drawRedCarLeft(this.x, this.y);        
 
         // check for collisions        
         this.collision();
@@ -252,7 +252,7 @@ function animate(motorwayOne, motorwayOneYpos){
 let gameOn = false;
 
 function startGame(){
-    // Trigers Event lister
+    // Triger Event listers
     window.addEventListener('keydown', moveFrog);
     window.addEventListener('keyup', releasedKey); 
     
