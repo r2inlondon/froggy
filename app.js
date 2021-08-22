@@ -161,6 +161,10 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
 function drawFrogImage(x = 127, y = 129){        
     base_image = new Image();
     base_image.src = 'img/frog.svg';
+
+    // check if you won
+    didYouWin(yFrog);
+
     
     ctx.drawImage(base_image, x, y, frogSize, frogSize);
             
@@ -190,9 +194,7 @@ function moveFrog(e){
         yFrog += yJump;
     }    
     
-    // check if you won
-    didYouWin(yFrog);
-
+    
     console.log({xFrog, yFrog});
 
     e.preventDefault();
@@ -254,7 +256,7 @@ function startGame(){
     drawFrogImage();
 
 
-    const motorwayOneYpos = 71;    
+    const motorwayOneYpos = 14;    
     let motorwayOne = carsAndStreet(motorwayOneYpos, 2, 1, 3, 1, 2, 0.5);
     
         
