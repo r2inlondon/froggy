@@ -111,7 +111,7 @@ function laneDirectionRight(cars, y, speed){
 }
 
 function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, leftCars2Num, 
-                        leftCars2Speed, rightCars2Num, rightCars2Speed, leftCars3Num, leftCars3Speed ){
+                        leftCars2Speed, rightCars2Num, rightCars2Speed, leftCars3Num, leftCars3Speed, rightCars3Num, rightCars3Speed ){
     
     
 
@@ -120,6 +120,7 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
     const leftCar2 = laneDirectionLeft(leftCars2Num, streetY + 40, leftCars2Speed);
     const rightCar2 = laneDirectionRight(rightCars2Num, streetY + 58, rightCars2Speed);
     const leftCar3 = laneDirectionLeft(leftCars3Num, streetY + 80, leftCars3Speed);
+    const rightCar3 = laneDirectionRight(rightCars3Num, streetY + 98, rightCars3Speed);
     
     const traffic = {
         leftCar: leftCar,
@@ -127,6 +128,9 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
         leftCar2: leftCar2,
         rightCar2: rightCar2,
         leftCar3: leftCar3,
+        rightCar3: rightCar3,
+        
+        // draw lanes and street
         street: function (yLane){
     
             let line = streetHeight / 6;
@@ -235,6 +239,7 @@ function draw(motorwayOne, motorwayOneYpos){
     motorwayOne.leftCar2.forEach( car => car.drawLeft());
     motorwayOne.rightCar2.forEach( car => car.drawRight());
     motorwayOne.leftCar3.forEach( car => car.drawLeft());
+    motorwayOne.rightCar3.forEach( car => car.drawRight());
     
     
     drawFrogImage(xFrog, yFrog);
@@ -263,11 +268,12 @@ function startGame(){
 
 
     const motorwayOneYpos = 14;    
-    let motorwayOne = carsAndStreet(motorwayOneYpos,2, 1, 
+    let motorwayOne = carsAndStreet(motorwayOneYpos,1, 3, 
                                                     3, 1, 
-                                                    2, 0.7, 
+                                                    2, 0.8, 
                                                     1, 2, 
-                                                    3, 0.4);
+                                                    3, 0.6,
+                                                    2, 0.4);
             
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
