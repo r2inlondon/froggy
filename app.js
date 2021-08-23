@@ -162,6 +162,12 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
                 centreLine = 5;
             }
                    
+        },
+        grass: function(){
+            ctx.beginPath();
+            ctx.rect(0, 0, myCanvas.width, myCanvas.height);
+            ctx.fillStyle = "#D5EEBB";
+            ctx.fill();
         }
     }
     return traffic;
@@ -227,23 +233,17 @@ function notification(message){
     location.reload();    
 }
 
-function grass(){
-    ctx.beginPath();
-    ctx.rect(0, 0, myCanvas.width, myCanvas.height);
-    ctx.fillStyle = "#D5EEBB";
-    ctx.fill();
-}
 
 // *** Game On ***
 
 function draw(motorwayOne, motorwayOneYpos){
 
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
-    
-    grass();
-    
+    // draw grass
+    motorwayOne.grass(motorwayOneYpos);
+    // draw street and lanes
     motorwayOne.street(motorwayOneYpos);
-        
+    // draw cars in the lanes
     motorwayOne.leftCar.forEach( car => car.drawLeft());
     motorwayOne.rightCar.forEach( car => car.drawRight());
     motorwayOne.leftCar2.forEach( car => car.drawLeft());
@@ -251,9 +251,8 @@ function draw(motorwayOne, motorwayOneYpos){
     motorwayOne.leftCar3.forEach( car => car.drawLeft());
     motorwayOne.rightCar3.forEach( car => car.drawRight());
     
-    
-    drawFrogImage(xFrog, yFrog);
-                      
+    // draw frog
+    drawFrogImage(xFrog, yFrog);                      
 }
 
 function animate(motorwayOne, motorwayOneYpos){    
