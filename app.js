@@ -217,7 +217,7 @@ function releasedKey(e){
 // check if you won
 function didYouWin(yFrog){   
     if(yFrog < 5){
-        notification('YOU WIN');
+        setTimeout(notification, 100, 'YOU WIN');        
     }
 }
 
@@ -227,11 +227,20 @@ function notification(message){
     location.reload();    
 }
 
+function grass(){
+    ctx.beginPath();
+    ctx.rect(0, 0, myCanvas.width, myCanvas.height);
+    ctx.fillStyle = "#D5EEBB";
+    ctx.fill();
+}
+
 // *** Game On ***
 
 function draw(motorwayOne, motorwayOneYpos){
 
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+    
+    grass();
     
     motorwayOne.street(motorwayOneYpos);
         
