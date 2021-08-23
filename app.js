@@ -4,7 +4,7 @@ const myCanvas = document.getElementById('myCanvas'),
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
-    carWidthRight = 35, carHeightRight = 25, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 60;
+    carWidthRight = 35, carHeightRight = 25, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 120;
 let keys = [];
 
 // Functions
@@ -124,7 +124,7 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
         leftCar2: leftCar2,
         street: function (yLane){
     
-            let line = streetHeight / 3;
+            let line = streetHeight / 6;
             streetBorder = line + yLane,
             centreLine = 5;
 
@@ -136,7 +136,7 @@ function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, righ
             ctx.stroke();
 
             // add centre lines
-            for(let i = 0; i < 2; i++ ){
+            for(let i = 0; i < 5; i++ ){
 
                 for(let i = 0; i < 5; i++){
                     ctx.beginPath();
@@ -164,7 +164,6 @@ function drawFrogImage(x = 127, y = 129){
 
     // check if you won
     didYouWin(yFrog);
-
     
     ctx.drawImage(base_image, x, y, frogSize, frogSize);
             
