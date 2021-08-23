@@ -33,7 +33,7 @@ class Car {
         ctx.drawImage(carImageLeft, this.x, this.y, carWidthLeft, carHeightLeft);    
 
         // reset car
-        if(this.x < - 0 ){
+        if(this.x < -30 ){
             this.x = 330;
         }    
         // move car position
@@ -110,20 +110,23 @@ function laneDirectionRight(cars, y, speed){
     return activeCars;
 }
 
-function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, leftCars2Num, leftCars2Speed, rightCarsNum2, rightCarsSpeed2 ){
+function carsAndStreet(streetY, leftCars1Num, leftCars1Speed, rightCarsNum, rightCarsSpeed, leftCars2Num, 
+                        leftCars2Speed, rightCars2Num, rightCars2Speed, leftCars3Num, leftCars3Speed ){
     
     
 
     const leftCar = laneDirectionLeft(leftCars1Num, streetY , leftCars1Speed);
-    const rightCar = laneDirectionRight(rightCarsNum, streetY + 20, rightCarsSpeed);
+    const rightCar = laneDirectionRight(rightCarsNum, streetY + 18, rightCarsSpeed);
     const leftCar2 = laneDirectionLeft(leftCars2Num, streetY + 40, leftCars2Speed);
-    const rightCar2 = laneDirectionRight(rightCarsNum2, streetY + 60, rightCarsSpeed2);
+    const rightCar2 = laneDirectionRight(rightCars2Num, streetY + 58, rightCars2Speed);
+    const leftCar3 = laneDirectionLeft(leftCars3Num, streetY + 80, leftCars3Speed);
     
     const traffic = {
         leftCar: leftCar,
         rightCar: rightCar,
         leftCar2: leftCar2,
         rightCar2: rightCar2,
+        leftCar3: leftCar3,
         street: function (yLane){
     
             let line = streetHeight / 6;
@@ -231,6 +234,7 @@ function draw(motorwayOne, motorwayOneYpos){
     motorwayOne.rightCar.forEach( car => car.drawRight());
     motorwayOne.leftCar2.forEach( car => car.drawLeft());
     motorwayOne.rightCar2.forEach( car => car.drawRight());
+    motorwayOne.leftCar3.forEach( car => car.drawLeft());
     
     
     drawFrogImage(xFrog, yFrog);
@@ -259,9 +263,12 @@ function startGame(){
 
 
     const motorwayOneYpos = 14;    
-    let motorwayOne = carsAndStreet(motorwayOneYpos, 2, 1, 3, 1, 2, 0.5, 1, 2);
-    
-        
+    let motorwayOne = carsAndStreet(motorwayOneYpos,2, 1, 
+                                                    3, 1, 
+                                                    2, 0.7, 
+                                                    1, 2, 
+                                                    3, 0.4);
+            
     // Conditional prevents cars from increasing speed when clickling on startGame constantly.
     if(gameOn === false){
         animate(motorwayOne, motorwayOneYpos);
