@@ -13,10 +13,11 @@ let keys = [];
 const   greenCarRight = 'img/goingRight/green_car_right.png', orangeCarRight = 'img/goingRight/oragen_car_right.png', 
         ambulanceRight = 'img/goingRight/ambulance_right.png', blueCarRight = 'img/goingRight/blue_car_right.png',
         greenCarLeft = 'img/goingLeft/green_car_left.png', redCarLeft = 'img/goingLeft/red_car_left.png',
-        yellowCarLeft = 'img/goingLeft/yellow_car_left.png', redCarLeft2 = 'img/goingLeft/red_car_left2.png';
+        yellowCarLeft = 'img/goingLeft/yellow_car_left.png', redCarLeft2 = 'img/goingLeft/red_car_left2.png',
+        yellowBeetleLeft = 'img/goingLeft/yellow_beetle_left.png', blackWhite = 'img/goingLeft/blackWhite.png';
 
 const carsRight = [greenCarRight, orangeCarRight, ambulanceRight, blueCarRight];
-const carsLeft = [greenCarLeft, redCarLeft2, yellowCarLeft, redCarLeft];
+const carsLeft = [yellowBeetleLeft, greenCarLeft, redCarLeft2, yellowCarLeft, redCarLeft, blackWhite ];
 
 class Car {
     constructor(x, y, speed, rndInt){
@@ -83,8 +84,8 @@ function laneDirectionLeft(cars, y, speed){
     let activeCars = [];
 
     for(let i = 0; i < cars; i++ ){
-        rndInt = Math.floor(Math.random() * 4)
-        
+        rndInt = Math.floor(Math.random() * 6);
+        console.log(rndInt);
         activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
 
         slowLaneCarDistance += slowLaneCarDistance
