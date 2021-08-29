@@ -7,48 +7,46 @@
     <title>Froggy</title>
     <link rel="shortcut icon" href="img/frog.svg"/>
 </head>
-<body>
+    <body>
 
-   
+        <div class="container">
+            <canvas id="myCanvas" class="center">
+                Your browser does not support the HTML canvas tag.
+            </canvas>
+        </div>
 
-    <div class="container">
-        <canvas id="myCanvas" class="center">
-            Your browser does not support the HTML canvas tag.
-        </canvas>
-    </div>
-
-    <div class="start" >
-        <button onClick="startGame()" >Start Game</button>
-    </div>
-    
-    <style>
+        <div class="start" >
+            <button onClick="startGame()" >Start Game</button>
+        </div>
         
-        .start{
-            margin-top: 5vh;
-            text-align: center;
-        }
+        <style>
+            
+            .start{
+                margin-top: 5vh;
+                text-align: center;
+            }
 
-        .start button{            
-                padding: 20px 40px;            
-        }
+            .start button{            
+                    padding: 20px 40px;            
+            }
 
-        .container {
-            text-align:center;
-        }
-        #myCanvas {        
-            margin-top: 5vh;    
-            width: 700px;
-            height: 500px;
-            border:1px solid #000000;
-        }
+            .container {
+                text-align:center;
+            }
+            #myCanvas {        
+                margin-top: 5vh;    
+                width: 700px;
+                height: 500px;
+                border:1px solid #000000;
+            }
+            
+
+        </style>
+
+        <script src="app.js"></script>
+        <!-- <script src="testing.js"></script> -->
         
+    </body>
 
-    </style>
-
-    
-</body>
-
-<script src="app.js"></script>
-<!-- <script src="testing.js"></script> -->
 
 </html>
