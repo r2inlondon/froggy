@@ -24,10 +24,12 @@ const carsLeft = [yellowBeetleLeft, greenCarLeft, redCarLeft2, yellowCarLeft, re
 
 let rndInt = Math.floor(Math.random() * 5);
 
-const carLeft1 = new Car(carsLeft[rndInt], 20, 20, 35, 20);
+const carLeft1 = new Car(carsLeft[rndInt], 20, 20, 35, 20, 1);
 
 
 function anime(){
+
+    ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 
     carLeft1.drawLeft();
   
