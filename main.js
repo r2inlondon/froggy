@@ -7,7 +7,7 @@ export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getC
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
-    carWidthRight = 35, carHeightRight = 25, carWidthLeft2 = 40, carHeightLeft2 = 20, carWidthLeft = 30, carHeightLeft = 20, streetHeight = 120;
+    carWidth = 30, carHeight = 20, streetHeight = 120;
 let keys = [];
 
 // Functions
@@ -24,7 +24,8 @@ const carsLeft = [yellowBeetleLeft, greenCarLeft, redCarLeft2, yellowCarLeft, re
 
 let rndInt = Math.floor(Math.random() * 5);
 
-const carLeft1 = new Car(carsLeft[rndInt], 20, 20, 35, 20, 1);
+const carLeft1 = new Car(carsLeft[rndInt], 20, 20, carWidth, carHeight, 1);
+const carRight1 = new Car(carsRight[rndInt], 20, 70, carWidth, carHeight, 1);
 
 
 function anime(){
@@ -32,6 +33,7 @@ function anime(){
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 
     carLeft1.drawLeft();
+    carRight1.drawRight();
   
     requestAnimationFrame(anime);
 

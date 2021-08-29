@@ -24,5 +24,22 @@ export default class Car {
         this.x -= this.speed;     
         
     }
+
+    drawRight(){
+        // load image
+        let carImageRight = new Image();
+        carImageRight.src = this.images;        
+        ctx.drawImage(carImageRight, this.x, this.y, this.carWidth, this.carHeight);
+                  
+        
+        // reset car
+        if(this.x > 300 ){
+            this.x = 0;
+        }    
+
+        // move car position
+        this.x += this.speed;     
+                
+    }
        
 }
