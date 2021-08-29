@@ -1,4 +1,4 @@
-import { myCanvas, ctx } from "./main.js";
+import { myCanvas, ctx } from "../main.js";
 
 export default class Car {
     constructor(images, x, y, carWidth, carHeight, speed){        

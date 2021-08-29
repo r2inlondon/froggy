@@ -1,4 +1,6 @@
-import Car from "./car.js";
+import Car from "./modules/car.js";
+import {drawFrogImage} from "./modules/frog.js"
+
 
 // Selectors
 export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
@@ -34,6 +36,8 @@ function anime(){
 
     carLeft1.drawLeft();
     carRight1.drawRight();
+
+    drawFrogImage();
   
     requestAnimationFrame(anime);
 
