@@ -9,15 +9,21 @@
     src: url('./fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
 }
 
+body{
+    background-color: #000000;
+}
+
 .page{
     background-color: #55C9D9 ;
     margin:auto;
-    width: 1440px;
-    height: 1024px;
+    width: 80vw;
+    height: 100vh;
+    position: relative;
 }
 
 .main{
-    
+    position: absolute;
+    bottom: 0;
     background-image: url("./img/web/zebra-crossing.png");
     background-position: center;
     background-size: cover;
