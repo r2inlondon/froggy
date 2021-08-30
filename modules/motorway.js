@@ -20,7 +20,7 @@ export function motorway(yLane){
 
         for(let i = 0; i < 5; i++){
             ctx.beginPath();
-            ctx.strokeStyle = "gray";
+            ctx.strokeStyle = "#FFFFFF";
             ctx.moveTo(centreLine, streetBorder);
             ctx.lineTo(centreLine += 30, streetBorder);
             ctx.closePath();
