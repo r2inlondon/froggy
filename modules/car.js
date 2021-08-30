@@ -99,8 +99,7 @@ export function laneDirectionRight(cars, y, speed){
     let activeCars = [];
 
     for(let i = 0; i < cars; i++ ){
-        rndInt = Math.floor(Math.random() * 5)
-        console.log({rndInt});
+        rndInt = Math.floor(Math.random() * 5)        
         // create car instance and save it in activeCars array
         activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
         // set distance between cars
