@@ -8,6 +8,23 @@
     font-family: luckiest;
     src: url('./fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
 }
+
+.page{
+    background-color: #55C9D9 ;
+    margin:auto;
+    width: 1440px;
+    height: 1024px;
+}
+
+.main{
+    
+    background-image: url("./img/web/zebra-crossing.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+    width: 100%;
+    height: 80%;
+}
 .game {
     display: none;
 }
