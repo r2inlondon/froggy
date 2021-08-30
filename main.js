@@ -1,12 +1,13 @@
 // import Modules
 import Car from "./modules/car.js";
 import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog} from "./modules/frog.js"
+import { motorway } from "./modules/motorway.js";
 
 // Selector
 const start = document.querySelector('.start');
 
 // Car's dimensions
-let carWidth = 30, carHeight = 20, streetHeight = 120;
+let carWidth = 30, carHeight = 20;
 
 
 // Cars images
@@ -30,6 +31,8 @@ const carRight1 = new Car(carsRight[rndInt], 20, 70, carWidth, carHeight, 1);
 function anime(){
     // clear frog and cars previous position
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+
+    motorway(14);
 
     carLeft1.drawLeft();
     carRight1.drawRight();
