@@ -1,20 +1,32 @@
 import { myCanvas, ctx, xFrog, frogSize, yFrog, notification } from "./frog.js";
 
+// Car's dimensions
+let carWidth = 30, carHeight = 20;
+
+// Cars images
+const   greenCarRight = 'img/goingRight/green_car_right.png', orangeCarRight = 'img/goingRight/oragen_car_right.png', 
+        ambulanceRight = 'img/goingRight/ambulance_right.png', blueCarRight = 'img/goingRight/blue_car_right.png',
+        greenCarLeft = 'img/goingLeft/green_car_left.png', redCarLeft = 'img/goingLeft/red_car_left.png',
+        yellowCarLeft = 'img/goingLeft/yellow_car_left.png', redCarLeft2 = 'img/goingLeft/red_car_left2.png',
+        yellowBeetleLeft = 'img/goingLeft/yellow_beetle_left.png', blackWhite = 'img/goingLeft/blackWhite.png';
+
+// car images arrays for directions
+const carsRight = [greenCarRight, orangeCarRight, ambulanceRight, blueCarRight, blackWhite];
+const carsLeft = [yellowBeetleLeft, greenCarLeft, redCarLeft2, yellowCarLeft, redCarLeft ];
+
 export default class Car {
-    constructor(images, x, y, carWidth, carHeight, speed){        
-        this.images = images        
+    constructor(x, y, speed, rndInt){        
         this.x = x;
-        this.y = y;        
-        this.carWidth = carWidth;
-        this.carHeight = carHeight;
+        this.y = y;                
         this.speed = speed;
+        this.rndInt = rndInt 
     }
    
     drawLeft(){        
         // load image
         let carImageLeft = new Image();
-        carImageLeft.src = this.images;        
-        ctx.drawImage(carImageLeft, this.x, this.y, this.carWidth, this.carHeight);
+        carImageLeft.src = carsLeft[this.rndInt];        
+        ctx.drawImage(carImageLeft, this.x, this.y, carWidth, carHeight);
         
         // reset car
         if(this.x < -30 ){
@@ -31,7 +43,7 @@ export default class Car {
         // load image
         let carImageRight = new Image();
         carImageRight.src = this.images;        
-        ctx.drawImage(carImageRight, this.x, this.y, this.carWidth, this.carHeight);
+        ctx.drawImage(carImageRight, this.x, this.y, carWidth, carHeight);
                   
         
         // reset car
@@ -48,12 +60,32 @@ export default class Car {
 
     collision(){
         if( this.x < xFrog + frogSize &&
-            this.x + this.carWidth > xFrog &&
+            this.x + carWidth > xFrog &&
             this.y < yFrog + frogSize &&
-            this.y + this.carHeight > yFrog
+            this.y + carHeight > yFrog
             ){
               notification('Frog is dead');
         }
     }
        
+}
+
+// create cars, in the lane, direction left
+export function laneDirectionLeft(cars, y, speed){
+    
+    let slowLaneCarDistance = (myCanvas.width / cars ) - 40;
+    
+    let rndInt = 0;
+        
+    let activeCars = [];
+
+    for(let i = 0; i < cars; i++ ){
+        rndInt = Math.floor(Math.random() * 5);
+        console.log({rndInt});
+        activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
+
+        slowLaneCarDistance += slowLaneCarDistance
+
+    }
+    return activeCars;
 }
