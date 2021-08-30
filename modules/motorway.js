@@ -1,7 +1,7 @@
 
 import { ctx } from "./frog.js";
 
-export function motorway(yLane){
+export function drawMotorway(yLane){
 
     
     let streetHeight = 120, 
