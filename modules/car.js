@@ -1,4 +1,4 @@
-import { myCanvas, ctx, xFrog, frogSize, yFrog } from "./frog.js";
+import { myCanvas, ctx, xFrog, frogSize, yFrog, notification } from "./frog.js";
 
 export default class Car {
     constructor(images, x, y, carWidth, carHeight, speed){        

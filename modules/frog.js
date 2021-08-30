@@ -57,3 +57,9 @@ export function releasedKey(e){
     // mark keys that were released
     keys[e.keyCode] = false;
 }
+
+export function notification(message){
+    const playAgain = alert(`${message}`)
+    // reload game
+    location.reload();    
+}
