@@ -1,11 +1,11 @@
+// import Modules
 import Car from "./modules/car.js";
-import {drawFrogImage} from "./modules/frog.js"
+import {drawFrogImage, moveFrog, releasedKey} from "./modules/frog.js"
 
 
 // Selectors
-export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
-
-
+export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d'),
+            start = document.querySelector('.start');
 
 // Variables
 let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, 
@@ -44,5 +44,36 @@ function anime(){
 }
 
 
+start.addEventListener('click', () => {
 
-anime();
+    // Triger Event listers
+    window.addEventListener('keydown', moveFrog);
+    window.addEventListener('keyup', releasedKey); 
+    
+    ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+    
+    // Reset Frog to start game
+    xFrog = xFrogStart, yFrog = yFrogStart;      
+    drawFrogImage();
+    
+    anime();
+    // console.log('clicked!');
+
+});
+
+// function startGame(){
+    // // Triger Event listers
+    // window.addEventListener('keydown', moveFrog);
+    // window.addEventListener('keyup', releasedKey); 
+    
+    // ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+    
+    // // Reset Frog to start game
+    // xFrog = xFrogStart, yFrog = yFrogStart;      
+    // drawFrogImage();
+    
+    // anime();
+
+//     console.log('clicked!');
+   
+// }
