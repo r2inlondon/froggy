@@ -1,5 +1,5 @@
 // import Modules
-import Car, {laneDirectionLeft} from "./modules/car.js";
+import Car, { laneDirectionLeft, laneDirectionRight } from "./modules/car.js";
 import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog} from "./modules/frog.js"
 import { motorway } from "./modules/motorway.js";
 
@@ -10,23 +10,19 @@ const start = document.querySelector('.start');
 // pick random car number
 let rndInt = Math.floor(Math.random() * 5);
 
-// const carLeft1 = new Car(carsLeft[rndInt], 20, 20, carWidth, carHeight, 1);
-// const carRight1 = new Car(carsRight[rndInt], 20, 70, carWidth, carHeight, 1);
-
 // animation function
-function animate(cars){
+function animate(leftCar1, carsRight1){
     // clear frog and cars previous position
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 
     motorway(14);
 
-    cars.forEach( car => car.drawLeft());
+    carsRight1.forEach( car => car.drawRight());
+    leftCar1.forEach( car => car.drawLeft());
     drawFrogImage(xFrog, yFrog);
 
-    requestAnimationFrame(() => animate(cars));
-
-      
-    // requestAnimationFrame(animate);
+    requestAnimationFrame(() => animate(leftCar1, carsRight1));
+          
 
 }
 
@@ -37,7 +33,8 @@ start.addEventListener('click', () => {
     window.addEventListener('keydown', moveFrog);
     window.addEventListener('keyup', releasedKey); 
 
-    const leftCar1 = laneDirectionLeft(2, 14, 1);    
+    const leftCar1 = laneDirectionLeft(2, 14, 0.5);  
+    const carsRight1 =  laneDirectionRight(3,32,0.5);
 
     console.log(leftCar1);
     
@@ -45,7 +42,7 @@ start.addEventListener('click', () => {
     
     
     
-    animate(leftCar1);    
+    animate(leftCar1, carsRight1);    
 
 });
 

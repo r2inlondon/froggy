@@ -42,7 +42,7 @@ export default class Car {
     drawRight(){
         // load image
         let carImageRight = new Image();
-        carImageRight.src = this.images;        
+        carImageRight.src = carsRight[this.rndInt];     
         ctx.drawImage(carImageRight, this.x, this.y, carWidth, carHeight);
                   
         
@@ -81,11 +81,30 @@ export function laneDirectionLeft(cars, y, speed){
 
     for(let i = 0; i < cars; i++ ){
         rndInt = Math.floor(Math.random() * 5);
-        console.log({rndInt});
+        // create car instance and save it in activeCars array
         activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
-
+        // set distance between cars
         slowLaneCarDistance += slowLaneCarDistance
 
+    }
+    return activeCars;
+}
+
+// create cars, in the lane, direction right
+export function laneDirectionRight(cars, y, speed){
+    let slowLaneCarDistance = (myCanvas.width / cars ) - 40;
+
+    let rndInt = 0;
+    
+    let activeCars = [];
+
+    for(let i = 0; i < cars; i++ ){
+        rndInt = Math.floor(Math.random() * 5)
+        console.log({rndInt});
+        // create car instance and save it in activeCars array
+        activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
+        // set distance between cars
+        slowLaneCarDistance += slowLaneCarDistance
     }
     return activeCars;
 }
