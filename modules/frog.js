@@ -14,7 +14,7 @@ export function drawFrogImage(x = 127, y = 129, frogSize = 16){
     base_image.src = 'img/frog.svg';
 
     // check if you won
-    // didYouWin(yFrog);
+    didYouWin(yFrog);
     
     ctx.drawImage(base_image, x, y, frogSize, frogSize);
             
@@ -62,4 +62,11 @@ export function notification(message){
     const playAgain = alert(`${message}`)
     // reload game
     location.reload();    
+}
+
+// check if you won
+function didYouWin(yFrog){   
+    if(yFrog < 5){
+        setTimeout(notification, 100, 'YOU WIN');        
+    }
 }
