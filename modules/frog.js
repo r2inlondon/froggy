@@ -1,4 +1,13 @@
-import { myCanvas, ctx } from "../main.js";
+// import { myCanvas, ctx } from "../main.js";
+
+// Selectors
+export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
+            
+
+export let xFrog = 126, yFrog = 128, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, 
+    yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, keys = [];
+
+
 
 export function drawFrogImage(x = 127, y = 129, frogSize = 16){        
     let base_image = new Image();
@@ -12,6 +21,7 @@ export function drawFrogImage(x = 127, y = 129, frogSize = 16){
 }
 
 export function moveFrog(e){
+
     // store any key pressed
     keys[e.keyCode] = true;    
     // Left - canvas limit
@@ -37,6 +47,8 @@ export function moveFrog(e){
     
     
     console.log({xFrog, yFrog});
+
+    drawFrogImage(xFrog, yFrog)
 
     e.preventDefault();
 }
