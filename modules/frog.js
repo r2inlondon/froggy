@@ -46,7 +46,7 @@ export function moveFrog(e){
     }    
     
     
-    console.log({xFrog, yFrog});
+    // console.log({xFrog, yFrog});
 
     drawFrogImage(xFrog, yFrog)
 

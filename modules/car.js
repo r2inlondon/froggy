@@ -1,4 +1,4 @@
-import { myCanvas, ctx } from "./frog.js";
+import { myCanvas, ctx, xFrog, frogSize, yFrog } from "./frog.js";
 
 export default class Car {
     constructor(images, x, y, carWidth, carHeight, speed){        
@@ -23,6 +23,8 @@ export default class Car {
         // move car position
         this.x -= this.speed;     
         
+        // check for collisions        
+        this.collision();        
     }
 
     drawRight(){
@@ -39,7 +41,19 @@ export default class Car {
 
         // move car position
         this.x += this.speed;     
-                
+
+        // check for collisions        
+        this.collision();                
+    }
+
+    collision(){
+        if( this.x < xFrog + frogSize &&
+            this.x + this.carWidth > xFrog &&
+            this.y < yFrog + frogSize &&
+            this.y + this.carHeight > yFrog
+            ){
+              notification('Frog is dead');
+        }
     }
        
 }
