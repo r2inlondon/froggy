@@ -40,8 +40,6 @@ start.addEventListener('click', () => {
     
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
-    
-    
     animate(leftCar1, carsRight1);    
 
 });
