@@ -4,8 +4,8 @@
 export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
             
 
-export let xFrog = 143, yFrog = 134, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, 
-    yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, keys = [];
+export let xFrog = 143, yFrog = 134, frogSize = 16, bottomLimit = myCanvas.height - frogSize, 
+        xJump = 28, yJump = frogSize + 4, keys = [];
 
 
 
@@ -40,7 +40,7 @@ export function moveFrog(e){
         yFrog -= yJump;
     }
     // up - canvas limit
-    if(keys[40] && yFrog < yFrogStart ){
+    if(keys[40] && yFrog < bottomLimit ){
         // up frog's jump length
         yFrog += yJump;
     }    

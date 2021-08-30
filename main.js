@@ -1,6 +1,6 @@
 // import Modules
 import Car from "./modules/car.js";
-import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrogStart, yFrogStart, xFrog, yFrog} from "./modules/frog.js"
+import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, bottomLimit, xFrog, yFrog} from "./modules/frog.js"
 
 // Selector
 const start = document.querySelector('.start');
@@ -51,9 +51,7 @@ start.addEventListener('click', () => {
     
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
-    // // Reset Frog to start game
-    // xFrog = xFrogStart, yFrog = yFrogStart;      
-    // drawFrogImage();
+    
     
     anime();
     // console.log('clicked!');
