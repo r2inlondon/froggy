@@ -13,12 +13,23 @@ body{
     background-color: #000000;
 }
 
+
+
 .page{
-    background-color: #55C9D9 ;
+    background-color: #A3F9FF ;
     margin:auto;
     width: 80vw;
     height: 100vh;
     position: relative;
+}
+
+.logo{
+    position: absolute;
+    background-image: url(./img/web/Logo.png);
+    background-repeat: no-repeat; 
+    width: 284px;
+    height: 261px;
+    margin: 53px 0 0 48px;
 }
 
 .main{
