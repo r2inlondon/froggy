@@ -1,0 +1,28 @@
+*,*::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+.game {
+    display: none;
+}
+
+.start{
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.start button{            
+        padding: 20px 40px;            
+}
+
+.container {
+    text-align:center;
+}
+#myCanvas {        
+    margin-top: 5vh;    
+    width: 700px;
+    height: 500px;
+    border:1px solid #000000;
+}
