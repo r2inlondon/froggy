@@ -43,7 +43,7 @@ start.addEventListener('click', () => {
             leftCar2 = laneDirectionLeft(1, 54, 4),
             carsRight2 =  laneDirectionRight(2,74,0.5),
             leftCar3 = laneDirectionLeft(3, 94, 1),
-            carsRight3 =  laneDirectionRight(4,114,1);
+            carsRight3 =  laneDirectionRight(3,114,1);
     
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     

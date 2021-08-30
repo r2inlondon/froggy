@@ -8,10 +8,11 @@ const   greenCarRight = 'img/goingRight/green_car_right.png', orangeCarRight = '
         ambulanceRight = 'img/goingRight/ambulance_right.png', blueCarRight = 'img/goingRight/blue_car_right.png',
         greenCarLeft = 'img/goingLeft/green_car_left.png', redCarLeft = 'img/goingLeft/red_car_left.png',
         yellowCarLeft = 'img/goingLeft/yellow_car_left.png', redCarLeft2 = 'img/goingLeft/red_car_left2.png',
-        yellowBeetleLeft = 'img/goingLeft/yellow_beetle_left.png', blackWhite = 'img/goingLeft/blackWhite.png';
+        yellowBeetleLeft = 'img/goingLeft/yellow_beetle_left.png', scooterRight = 'img/goingRight/scooter_right.png',
+        scooterRightBlue = 'img/goingRight/scooter_right_blue.png';
 
 // car images arrays for directions
-const carsRight = [greenCarRight, orangeCarRight, ambulanceRight, blueCarRight, blackWhite];
+const carsRight = [greenCarRight, orangeCarRight, ambulanceRight, blueCarRight, scooterRight, scooterRightBlue];
 const carsLeft = [yellowBeetleLeft, greenCarLeft, redCarLeft2, yellowCarLeft, redCarLeft ];
 
 export default class Car {
@@ -99,7 +100,7 @@ export function laneDirectionRight(cars, y, speed){
     let activeCars = [];
 
     for(let i = 0; i < cars; i++ ){
-        rndInt = Math.floor(Math.random() * 5)        
+        rndInt = Math.floor(Math.random() * 6)        
         // create car instance and save it in activeCars array
         activeCars.push(new Car(slowLaneCarDistance, y, speed, rndInt));
         // set distance between cars
