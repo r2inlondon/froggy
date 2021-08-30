@@ -4,7 +4,7 @@
 export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
             
 
-export let xFrog = 126, yFrog = 134, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, 
+export let xFrog = 143, yFrog = 134, frogSize = 16, xFrogStart = (myCanvas.width /2) - 7, 
     yFrogStart = myCanvas.height - frogSize, xJump = 28, yJump = frogSize + 4, keys = [];
 
 
