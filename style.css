@@ -23,15 +23,6 @@ body{
     position: relative;
 }
 
-.logo{
-    position: absolute;
-    background-image: url(./img/web/Logo.png);
-    background-repeat: no-repeat; 
-    width: 284px;
-    height: 261px;
-    margin: 53px 0 0 48px;
-}
-
 .main{
     position: absolute;
     bottom: 0;
@@ -41,7 +32,21 @@ body{
     background-repeat: no-repeat;    
     width: 100%;
     height: 80%;
+    z-index: 1;
 }
+
+.logo{
+    position: absolute;
+    background-image: url(./img/web/chilling_frog.png);
+    background-repeat: no-repeat; 
+    width: 60%;
+    height: 30%;
+    top: 50%;
+    left: 25%;    
+    z-index: 2;    
+}
+
+
 .game {
     display: none;
 }
