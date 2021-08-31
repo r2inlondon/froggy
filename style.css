@@ -35,6 +35,17 @@ body{
     z-index: 1;
 }
 
+.car{
+    position: absolute;
+    background-image: url(./img/web/frontCar.png);
+    background-repeat: no-repeat; 
+    width: 60%;
+    height: 30%;
+    top: 38%;
+    left: 41%;    
+    z-index: 2;    
+}
+
 .logo{
     position: absolute;
     background-image: url(./img/web/chilling_frog.png);
