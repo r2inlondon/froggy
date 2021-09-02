@@ -39,18 +39,18 @@ body{
     position: absolute;
     background-image: url(./img/web/frontCar.png);
     background-repeat: no-repeat; 
-    width: 60%;
+    width: 129px;
     height: 30%;
     top: 38%;
-    left: 41%;    
+    left: 40%;    
     z-index: 2;    
 }
 
-.logo{
+.logo{    
     position: absolute;
     background-image: url(./img/web/chilling_frog.png);
     background-repeat: no-repeat; 
-    width: 60%;
+    width: 580px;
     height: 30%;
     top: 50%;
     left: 25%;    
