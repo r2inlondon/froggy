@@ -1,6 +1,6 @@
 
 export function blinking(element){
     setInterval(() => {
-        element.style.display = (element.style.display == 'none' ? '' : 'none');
+        element.style.opacity = (element.style.opacity == 1 ? 0 : 1);
     }, 700);
 }
