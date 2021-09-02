@@ -33,24 +33,31 @@ body{
     z-index: 1;
 }
 
-.start{
+.start-button{
+    position: absolute;
     margin: auto;
     padding-top: 8%;
     position: relative;
-    width: 317px;    
+    width: 179px;    
+    height: 128px;
+    z-index: 2;
 }
 
-.start p {
+.start-button p {
     text-align: center;
     font-family: luckiest;
     font-size: 64px;
     color: black;
     line-height: 1em;
-    height: 2em;
+    height: 1.9em;
     overflow: hidden;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;        
+}
+
+.game-text:hover{
+    cursor: pointer;
 }
 
 .car{
