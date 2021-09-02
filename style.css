@@ -35,6 +35,23 @@ body{
     z-index: 1;
 }
 
+.start{
+    margin: auto;
+    width: 317px;
+    line-height: 3.5em;
+    height: 7em;
+    overflow: hidden;
+}
+
+.start p {
+    font-family: luckiest;
+    font-size: 64px;
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;    
+}
+
 .car{
     position: absolute;
     background-image: url(./img/web/frontCar.png);
