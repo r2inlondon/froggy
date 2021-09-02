@@ -13,8 +13,6 @@ body{
     background-color: #000000;
 }
 
-
-
 .page{
     background-color: #A3F9FF ;
     margin:auto;
@@ -37,19 +35,22 @@ body{
 
 .start{
     margin: auto;
-    width: 317px;
-    line-height: 3.5em;
-    height: 7em;
-    overflow: hidden;
+    padding-top: 8%;
+    position: relative;
+    width: 317px;    
 }
 
 .start p {
+    text-align: center;
     font-family: luckiest;
     font-size: 64px;
     color: black;
+    line-height: 1em;
+    height: 2em;
+    overflow: hidden;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;    
+    -webkit-text-stroke-color: black;        
 }
 
 .car{
@@ -74,19 +75,13 @@ body{
     z-index: 2;    
 }
 
-
 .game {
     display: none;
 }
 
-.start{
-    margin-top: 5vh;
-    text-align: center;
-}
-
-.start button{            
+/* .start button{            
         padding: 20px 40px;            
-}
+} */
 
 .container {
     text-align:center;
