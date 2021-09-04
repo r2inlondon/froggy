@@ -62,8 +62,11 @@ body{
 }
 
 .instructions {
+    position: absolute;
     width: 280px;
     height: 229px;
+    text-align: center;
+    /* z-index: 2; */
 }
 
 .instructions p {        
@@ -71,6 +74,11 @@ body{
     font-family: luckiest;
     font-size: 36px;
     color: #EB5329;
+}
+
+.instructions img {    
+    width: 212px;
+    height: 138px;
 }
 
 .car{
