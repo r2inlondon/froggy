@@ -6,7 +6,7 @@ import {blinking} from "./modules/blinking.js";
 
 
 const startGame = document.querySelector('.game-text');
-window.addEventListener('load', blinking(startGame));
+// window.addEventListener('load', blinking(startGame));
 
 // animation function
 function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){

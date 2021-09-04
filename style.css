@@ -34,6 +34,7 @@ body{
 }
 
 .start-button{
+    display: none;
     position: absolute;
     margin: auto;
     padding-top: 8%;
@@ -47,13 +48,13 @@ body{
     text-align: center;
     font-family: luckiest;
     font-size: 64px;
-    color: black;
+    color: #EB5329;
     line-height: 1em;
     height: 1.9em;
     overflow: hidden;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;        
+    /* -webkit-text-fill-color: white; Will override color (regardless of order) */
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-text-stroke-color: black; */
 }
 
 .game-text:hover{
