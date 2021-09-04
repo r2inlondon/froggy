@@ -61,6 +61,18 @@ body{
     cursor: pointer;
 }
 
+.instructions {
+    width: 280px;
+    height: 229px;
+}
+
+.instructions p {        
+    text-align: center;    
+    font-family: luckiest;
+    font-size: 36px;
+    color: #EB5329;
+}
+
 .car{
     position: absolute;
     background-image: url(./img/web/frontCar.png);
