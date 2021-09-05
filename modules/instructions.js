@@ -8,3 +8,11 @@ export function instructionsUp(){
             <img class="arrows" src="./img/web/arrowKeys2.png" alt="Keyboard Keys">
         </div>`
 }
+
+export function clearInstructions(){
+    const orangeBox = document.querySelector('.orange-box');
+
+    while(orangeBox.firstChild){
+        orangeBox.removeChild(orangeBox.firstChild);
+    }
+}
