@@ -64,7 +64,7 @@ body{
 
 .instructions-circle {
     position: absolute;
-    left: 40%;
+    left: 38%;
     top: 5%;    
     padding: relative;
     background: #EB5329;
@@ -72,6 +72,18 @@ body{
     width: 400px;
     height: 290px;
     z-index: 3;
+    animation: box-out 0.5s;
+}
+
+@keyframes box-out {
+    from {
+        transform: scale(.1, .1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
 }
 
 .instructions-box {
@@ -87,14 +99,16 @@ body{
     text-align: center;    
     font-family: luckiest;
     font-size: 36px;
-    color: #CCDB82;
+    color: #A3F9FF;
     margin-bottom: 30px;
 }
 
 .arrows {    
     width: 212px;
-    height: 138px;
+    height: 138px;    
 }
+
+@key
 
 .car{
     position: absolute;
