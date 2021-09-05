@@ -61,22 +61,37 @@ body{
     cursor: pointer;
 }
 
-.instructions {
+
+.instructions-circle {
     position: absolute;
+    left: 40%;
+    top: 5%;    
+    padding: relative;
+    background: #EB5329;
+    border-radius: 50%;
+    width: 360px;
+    height: 360px;
+    z-index: 3;
+}
+
+.instructions-box {
+    padding: relative;
     width: 280px;
     height: 229px;
     text-align: center;
-    /* z-index: 2; */
+    margin: auto;
+    margin-top: 16%;
 }
 
-.instructions p {        
+.instructions{        
     text-align: center;    
     font-family: luckiest;
     font-size: 36px;
-    color: #EB5329;
+    color: #CCDB82;
+    margin-bottom: 30px;
 }
 
-.instructions img {    
+.arrows {    
     width: 212px;
     height: 138px;
 }
