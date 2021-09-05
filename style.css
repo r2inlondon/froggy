@@ -68,9 +68,9 @@ body{
     top: 5%;    
     padding: relative;
     background: #EB5329;
-    border-radius: 50%;
-    width: 360px;
-    height: 360px;
+    border-radius: 2%;
+    width: 400px;
+    height: 290px;
     z-index: 3;
 }
 
@@ -80,7 +80,7 @@ body{
     height: 229px;
     text-align: center;
     margin: auto;
-    margin-top: 16%;
+    margin-top: 5%;
 }
 
 .instructions{        
