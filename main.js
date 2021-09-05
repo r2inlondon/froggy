@@ -2,11 +2,22 @@
 import Car, { laneDirectionLeft, laneDirectionRight } from "./modules/car.js";
 import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog} from "./modules/frog.js"
 import { drawMotorway } from "./modules/motorway.js";
-import {blinking} from "./modules/blinking.js";
+import {blinking, stopBlinking} from "./modules/blinking.js";
+import { instructionsUp } from "./modules/instructions.js";
 
 
+// start game click
 const startGame = document.querySelector('.game-text');
-// window.addEventListener('load', blinking(startGame));
+
+blinking(startGame);
+
+startGame.addEventListener('click', () =>{
+    startGame.style.display = 'none';
+    instructionsUp();
+});
+
+
+
 
 // animation function
 function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){
