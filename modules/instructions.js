@@ -1,4 +1,6 @@
 
+import { countDown } from "./timer.js";
+
 export function instructionsUp(){
     const instructions = document.querySelector('.instructions');
     
@@ -15,4 +17,6 @@ export function clearInstructions(){
     while(orangeBox.firstChild){
         orangeBox.removeChild(orangeBox.firstChild);
     }
+
+    countDown();
 }

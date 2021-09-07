@@ -71,8 +71,7 @@ body{
     width: 400px;
     height: 290px;
     text-align: center;
-    margin: auto;
-    
+    margin: auto;    
     z-index: 3;    
     animation: box-out 0.5s;
 }
