@@ -37,17 +37,17 @@ body{
     /* display: none; */
     position: absolute;
     margin: auto;
-    padding-top: 8%;
+    padding-top: 100px;
     position: relative;
-    width: 179px;    
-    height: 128px;
+    width: 300px;    
+    height: 280px;
     z-index: 2;
 }
 
 .start-button p {
     text-align: center;
     font-family: luckiest;
-    font-size: 64px;
+    font-size: 100px;
     color: #EB5329;
     line-height: 1em;
     height: 1.9em;
@@ -65,20 +65,19 @@ body{
 .orange-box {    
     position: absolute;
     left: 38%;
-    top: 5%;        
+    top: -400px;        
     background: #EB5329;
     border-radius: 2%;
     width: 400px;
     height: 290px;
     text-align: center;
     margin: auto;    
-    z-index: 3;    
-    animation: box-out 0.5s;
+    z-index: 3;        
 }
 
 .instructions-msg{
     margin-top: 5%; 
-    text-align: center;    
+    text-align: center;
     font-family: luckiest;
     font-size: 36px;
     color: #A3F9FF;
@@ -90,15 +89,18 @@ body{
     height: 138px;    
 }
 
-@keyframes box-out {
-    from {
-        transform: scale(.1, .1);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1, 1);
-        opacity: 1;
-    }
+.numbers{
+    font-family: luckiest;
+    font-size: 200px;
+    height: 100%;
+    color: #A3F9FF;        
+    margin-top: 5%;
+}
+
+@keyframes drop-box {
+    0%{}
+    70%{transform: translateY(530px)}
+    100%{transform: translateY(480px)}
 }
 
 .car{
