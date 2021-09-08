@@ -1,8 +1,32 @@
 
+let counting;
+
 export function countDown(){
-    const orangeBox = document.querySelector('.orange-box');
-    orangeBox.innerHTML = `<p class="numbers">1</p>`;
+    const numbers = document.querySelector('.numbers');
+    // Get today's date in miliseconds
+    const now = Date.now();
+    // Convert the seconds (parameter) into miliseconds
+    const then = now + 3 * 1000;
+
+    let secondsLeft = 3;
+
+    counting = setInterval(() => {                
+        // magic happens in this line
+        secondsLeft = Math.round((then - Date.now()) / 1000);
+        // render numbers
+        numbers.innerText = secondsLeft;
+        // stop interval when countdown gets to zero
+        if(secondsLeft <= 0) {
+            clearInterval(counting)
+            numbers.innerText = 'Go!';
+        };
+                                     
+    }, 1000);
+        
 }
+
+
+
 
 
 

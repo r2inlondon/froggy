@@ -18,6 +18,7 @@ startGame.addEventListener('click', () =>{
     instructionsUp();
     // clear instructions timer
     setTimeout(clearInstructions, 3000);
+        
 });
 
 

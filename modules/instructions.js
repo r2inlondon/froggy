@@ -13,6 +13,8 @@ export function clearInstructions(){
     while(orangeBox.firstChild){
         orangeBox.removeChild(orangeBox.firstChild);
     }
+        
+    orangeBox.innerHTML = `<p class="numbers">3</p>`;
 
     countDown();
 }
