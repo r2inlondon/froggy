@@ -6,7 +6,7 @@ import {blinking, stopBlinking} from "./modules/blinking.js";
 import { instructionsUp, clearInstructions } from "./modules/instructions.js";
 
 
-// animation function
+// animate canvas 
 function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){
     // clear frog and cars previous position
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
@@ -27,10 +27,6 @@ function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight
     requestAnimationFrame(() => animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3));          
 }
 
-
-// Start Button
-
-const start = document.querySelector('.start');
 
 let gameOn = false;
 

@@ -119,23 +119,31 @@ body{
     background-image: url(./img/web/chilling_frog.png);
     background-repeat: no-repeat; 
     width: 580px;
-    height: 30%;
+    height: 210px;
     top: 50%;
-    left: 25%;    
+    left: 50%;
+    margin-left: -290px;
+    margin-top: 20px;
     z-index: 2;    
 }
 
 .game {
     display: none;
     position: absolute;
-    height: 500px;
-    width: 100%;
-    top: 10%;
-    left: 20%;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -350px;
     z-index: 3;
 }
 
-#myCanvas {            
+.game-area{
+    position: relative;            
+    margin: auto;
+}
+
+#myCanvas {
+    position: relative;                
     margin: auto;
     width: 700px;
     height: 500px;
