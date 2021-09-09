@@ -3,23 +3,7 @@ import Car, { laneDirectionLeft, laneDirectionRight } from "./modules/car.js";
 import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog} from "./modules/frog.js"
 import { drawMotorway } from "./modules/motorway.js";
 import {blinking, stopBlinking} from "./modules/blinking.js";
-import { clearInstructions, instructionsUp } from "./modules/instructions.js";
-
-
-// start game click
-const startGame = document.querySelector('.game-text');
-// get text blinking
-blinking(startGame);
-// get game instructions
-startGame.addEventListener('click', () =>{
-    // hide start game
-    startGame.style.display = 'none';
-    // get instructions
-    instructionsUp();
-    // clear instructions timer
-    setTimeout(clearInstructions, 3000);
-        
-});
+import { instructionsUp, clearInstructions } from "./modules/instructions.js";
 
 
 // animation function
@@ -50,7 +34,12 @@ const start = document.querySelector('.start');
 
 let gameOn = false;
 
-start.addEventListener('click', () => {
+export function playGame(){
+    const canvas = document.querySelector('.game');
+    const orangeBox = document.querySelector('.orange-box');
+
+    orangeBox.style.display = 'none';
+    canvas.style.display = 'inline';
 
     // Triger Event listers
     window.addEventListener('keydown', moveFrog);
@@ -70,6 +59,22 @@ start.addEventListener('click', () => {
         gameOn = true;
     }            
 
+};
+
+
+// start game click
+const startGame = document.querySelector('.game-text');
+// get text blinking
+blinking(startGame);
+// get game instructions
+startGame.addEventListener('click', () =>{
+    // hide start game
+    startGame.style.display = 'none';
+    // get instructions
+    instructionsUp();    
+
+    setTimeout(clearInstructions, 3000);
+        
 });
 
 

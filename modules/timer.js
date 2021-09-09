@@ -1,7 +1,11 @@
 
-let counting;
+    import {playGame} from "../main.js"
+    
+    let counting;
 
 export function countDown(){
+    console.log('timer');
+
     const numbers = document.querySelector('.numbers');
     // Get today's date in miliseconds
     const now = Date.now();
@@ -19,6 +23,7 @@ export function countDown(){
         if(secondsLeft <= 0) {
             clearInterval(counting)
             numbers.innerText = 'Go!';
+            setTimeout(playGame, 1000);
         };
                                      
     }, 1000);

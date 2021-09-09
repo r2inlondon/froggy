@@ -133,12 +133,14 @@ body{
         padding: 20px 40px;            
 } */
 
-.container {
-    text-align:center;
-}
-#myCanvas {        
-    margin-top: 5vh;    
+
+
+#myCanvas {            
+    position: absolute;
     width: 700px;
     height: 500px;
     border:1px solid #000000;
+    z-index: 3;
+    /* top: 30%; */
+    left: 20%;    
 }
