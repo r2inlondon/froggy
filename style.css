@@ -53,9 +53,7 @@ body{
     height: 1.9em;
     overflow: hidden;
     opacity: 0;
-    /* -webkit-text-fill-color: white; Will override color (regardless of order) */
-    /* -webkit-text-stroke-width: 1px; */
-    /* -webkit-text-stroke-color: black; */
+   
 }
 
 .game-text:hover{
@@ -63,15 +61,16 @@ body{
 }
 
 .orange-box {    
-    position: absolute;
-    left: 38%;
-    top: -400px;        
-    background: #EB5329;
-    border-radius: 2%;
+    position: absolute;    
     width: 400px;
     height: 290px;
-    text-align: center;
-    margin: auto;    
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;      
+    margin-top: -800px;
+    background: #EB5329;
+    border-radius: 2%;
+    text-align: center;    
     z-index: 3;        
 }
 
