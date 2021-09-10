@@ -65,7 +65,7 @@ export default class Car {
             this.y < yFrog + frogSize &&
             this.y + carHeight > yFrog
             ){
-              notification('Frog is dead');
+              setTimeout (() => {notification('Frog is dead')}, 50);
         }
     }
        

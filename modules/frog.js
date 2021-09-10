@@ -1,4 +1,4 @@
-// import { myCanvas, ctx } from "../main.js";
+
 
 // Selectors
 export const myCanvas = document.getElementById('myCanvas'), ctx = myCanvas.getContext('2d');
@@ -59,7 +59,7 @@ export function releasedKey(e){
 }
 
 export function notification(message){
-    const playAgain = alert(`${message}`)
+    alert(`${message}`)
     // reload game
     location.reload();    
 }
