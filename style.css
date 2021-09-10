@@ -33,6 +33,33 @@ body{
     z-index: 1;
 }
 
+.cloud-1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 15px;
+    opacity: 0.8;    
+    z-index: 1;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: moveRight 20s infinite both linear;
+}
+
+.cloud-2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 180px;   
+    opacity: 0.5;    
+    z-index: 0;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: moveRight 23s infinite both reverse linear;
+}
+
+@keyframes moveRight{
+    from { transform: translateX(-100px);}
+    to { transform: translateX(1130px);}
+}
+
 .start-button{
     /* display: none; */
     position: absolute;
