@@ -131,7 +131,7 @@ body{
     top: 50%;
     left: 50%;
     margin-top: -350px;
-    margin-left: -350px;
+    margin-left: -400px;
     z-index: 3;
 }
 
@@ -143,8 +143,8 @@ body{
 #myCanvas {
     position: relative;                
     margin: auto;
-    width: 700px;
-    height: 500px;
+    width: 800px;
+    height: 600px;
     border:1px solid #000000;        
 }
 
@@ -162,5 +162,13 @@ body{
         height: 1.9em;
         overflow: hidden;
         opacity: 0;   
-    }    
+    }
+    .game {
+        margin-top: -250px;
+        margin-left: -350px;
+    }
+    #myCanvas{
+        width: 700px;
+        height: 500px;
+    }
 }
