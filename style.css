@@ -52,8 +52,7 @@ body{
     line-height: 1em;
     height: 1.9em;
     overflow: hidden;
-    opacity: 0;
-   
+    opacity: 0;   
 }
 
 .game-text:hover{
@@ -147,4 +146,21 @@ body{
     width: 700px;
     height: 500px;
     border:1px solid #000000;        
+}
+
+/* if the screen is less than 800px apply this rules */
+@media screen and (max-height: 800px) {
+    .start-button{        
+        padding-top: 80px;        
+        width: 195px;    
+        height: 215px;        
+    }
+    .start-button p {                
+        font-size: 70px;
+        color: #EB5329;
+        line-height: 1em;
+        height: 1.9em;
+        overflow: hidden;
+        opacity: 0;   
+    }    
 }
