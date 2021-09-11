@@ -30,13 +30,8 @@ function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight
 
 let gameOn = false;
 
-export function playGame(){
-    const canvas = document.querySelector('.game');
-    const orangeBox = document.querySelector('.orange-box');
-
-    orangeBox.style.display = 'none';
-    canvas.style.display = 'inline';
-
+export function playGame(){    
+    console.log('preloading game');
     // Triger Event listers
     window.addEventListener('keydown', moveFrog);
     window.addEventListener('keyup', releasedKey); 

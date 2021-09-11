@@ -9,7 +9,7 @@ export function instructionsUp(){
 }
 
 export function clearInstructions(){
-    console.log('clear instructions');
+    
     const orangeBox = document.querySelector('.orange-box');
 
     while(orangeBox.firstChild){
