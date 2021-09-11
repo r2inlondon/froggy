@@ -1,15 +1,14 @@
 import { countDown } from "./timer.js";
 
-export function instructionsUp(){
-    const orangeBox = document.querySelector('.orange-box');
+const orangeBox = document.querySelector('.orange-box');
 
+export function instructionsUp(){
+    
     orangeBox.style.animation = 'drop-box 0.5s ease forwards';        
 }
 
 export function clearInstructions(){
     
-    const orangeBox = document.querySelector('.orange-box');
-
     while(orangeBox.firstChild){
         orangeBox.removeChild(orangeBox.firstChild);
     }
@@ -18,4 +17,12 @@ export function clearInstructions(){
 
     countDown();
     
+}
+
+export function dead(){
+    orangeBox.innerHTML = `<p>Frog is Dead!</p>`;
+
+    orangeBox.style.display = 'inline';
+    orangeBox.style.animation = 'drop-box 0.5s ease forwards'; 
+
 }
