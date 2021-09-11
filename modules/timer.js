@@ -10,7 +10,7 @@ export function countDown(){
     const now = Date.now();
     // Convert the seconds (parameter) into miliseconds
     const then = now + 3 * 1000;
-    // preload game in the background
+    // Preload game in the background
     playGame();
 
     let secondsLeft = 3;

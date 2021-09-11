@@ -5,6 +5,7 @@ import { drawMotorway } from "./modules/motorway.js";
 import {blinking, stopBlinking} from "./modules/blinking.js";
 import { instructionsUp, clearInstructions } from "./modules/instructions.js";
 
+let playing;
 
 // animate canvas 
 function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){
@@ -24,14 +25,19 @@ function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight
 
     drawFrogImage(xFrog, yFrog);
 
-    requestAnimationFrame(() => animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3));          
+    playing = window.requestAnimationFrame(() => animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3));       
 }
+
+export function stopAnimation(){
+    window.cancelAnimationFrame(playing);
+}
+
 
 
 let gameOn = false;
 
 export function playGame(){    
-    console.log('preloading game');
+    console.log('Pre-load game');
     // Triger Event listers
     window.addEventListener('keydown', moveFrog);
     window.addEventListener('keyup', releasedKey); 
