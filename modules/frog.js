@@ -60,14 +60,16 @@ export function releasedKey(e){
 
 export function notification(message){
     console.log('message');
-    // alert(`${message}`)
-
+    
     window.removeEventListener('keydown', moveFrog);
     window.removeEventListener('keyup', releasedKey); 
-
+    
     stopAnimation();
+    
+    alert(`${message}`)
+
     // reload game
-    // location.reload();
+    location.reload();
 }
 
 // check if you won
