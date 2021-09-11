@@ -3,9 +3,7 @@ import { countDown } from "./timer.js";
 export function instructionsUp(){
     const orangeBox = document.querySelector('.orange-box');
 
-    orangeBox.style.animation = 'drop-box 0.5s ease forwards';
-    // clear instructions timer
-    
+    orangeBox.style.animation = 'drop-box 0.5s ease forwards';        
 }
 
 export function clearInstructions(){
