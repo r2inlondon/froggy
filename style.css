@@ -83,15 +83,17 @@ body{
 
 .white-box{
     position: absolute;    
-    width: 300px;
-    height: 270px;   
+    width: 390px;
+    height: 395px;   
     left: 50%;
-    top: 50%;
-    margin-left: -150px;      
-    margin-top: -800px;
+    top: -50%;
+    margin-left: -190px;      
+    margin-top: -164px;
     background: #FFFFFF;
+    opacity: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 2%;
-    text-align: center;    
+    text-align: center;
     z-index: 4;
 }
 
@@ -106,13 +108,45 @@ body{
 
 .white-box img {    
     width: 300px;
-    height: 230px;    
+    height: 230px;
+    position: relative; 
 }
 
+.button-52 {
+    font-family: luckiest;
+    font-size: 35px;  
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-52:after {
+    content: "";
+    background-color: #FF9A3C;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .button-52:hover:after {
+    top: 0px;
+    left: 0px;
+  }
+  
+
 @keyframes drop-white{
-    0%{}
-    70%{transform: translateY(730px)}
-    100%{transform: translateY(680px)}
+    0%{}    
+    100%{transform: translateY(90vh)}
 }
 
 .instructions-msg{
@@ -139,8 +173,8 @@ body{
 
 @keyframes drop-box {
     0%{}
-    70%{transform: translateY(55vh)}
-    100%{transform: translateY(50vh)}
+    70%{transform: translateY(65vh)}
+    100%{transform: translateY(60vh)}
 }
 
 .car{
