@@ -68,6 +68,8 @@ export function notification(message){
     // alert(`${message}`)
     const whiteBox = document.querySelector('.white-box');
 
+    whiteBox.style.display = 'inline';
+
     whiteBox.innerHTML = `${message}`
 
     whiteBox.style.animation = 'drop-white 1s ease forwards'; 

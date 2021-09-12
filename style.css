@@ -159,7 +159,7 @@ body{
     text-align: center;
     font-family: luckiest;
     font-size: 36px;
-    color: #A3F9FF;
+    color: #000000;
     margin-bottom: 30px;
 }
 
@@ -170,9 +170,9 @@ body{
 
 .numbers{
     font-family: luckiest;
-    font-size: 200px;
+    font-size: 250px;
     height: 100%;
-    color: #A3F9FF;        
+    color: #000000;        
     margin-top: 5%;
 }
 

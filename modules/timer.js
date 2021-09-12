@@ -27,9 +27,9 @@ export function countDown(){
             // setTimeout(playGame, 1000);
             setTimeout(() =>{
                 const canvas = document.querySelector('.game');
-                const orangeBox = document.querySelector('.white-box');
+                const whiteBox = document.querySelector('.white-box');
 
-                orangeBox.style.display = 'none';
+                whiteBox.style.display = 'none';
                 canvas.style.display = 'inline';
             },1000)
         };
