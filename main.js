@@ -36,7 +36,7 @@ export function stopAnimation(){
 
 let gameOn = false;
 
-export function playGame(){    
+export function playGame(){     
     console.log('Pre-load game');
     // Triger Event listers
     window.addEventListener('keydown', moveFrog);

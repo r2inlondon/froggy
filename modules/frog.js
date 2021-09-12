@@ -73,9 +73,9 @@ export function notification(message){
     whiteBox.innerHTML = `${message}`
 
     whiteBox.style.animation = 'drop-white 1s ease forwards'; 
+
+    if(whiteBox.childNodes[2].className === "button-52"){startAgain()}; 
     
-    // reload game
-    // location.reload();
 }
 
 // check if you won
@@ -85,4 +85,14 @@ function didYouWin(yFrog){
         setTimeout (() => {notification(message)}, 50);
         // setTimeout(notification, 100, 'YOU WIN');        
     }
+}
+
+function startAgain(){
+    console.log('Start Again?')
+    const button = document.querySelector('.button-52');
+
+    button.addEventListener('click', () =>{ 
+        // reload game
+        location.reload();
+    });
 }
