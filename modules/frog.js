@@ -80,6 +80,8 @@ export function notification(message){
 // check if you won
 function didYouWin(yFrog){   
     if(yFrog < 5){
-        setTimeout(notification, 100, 'YOU WIN');        
+        const message = '<p class="dead-msg">you win!</p><img src="./img/web/win-frog.png" alt="dead frog" class="win-img"><button class="button-52" role="button">play again?</button>';
+        setTimeout (() => {notification(message)}, 50);
+        // setTimeout(notification, 100, 'YOU WIN');        
     }
 }

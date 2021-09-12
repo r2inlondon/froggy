@@ -106,10 +106,15 @@ body{
    
 }
 
-.white-box img {    
+.dead-img{    
     width: 300px;
     height: 230px;
     position: relative; 
+}
+
+.win-img{
+    width: 100%;
+    height: 230px;
 }
 
 .button-52 {
