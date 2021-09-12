@@ -78,7 +78,41 @@ body{
     background: #EB5329;
     border-radius: 2%;
     text-align: center;    
-    z-index: 4;        
+    z-index: 3;        
+}
+
+.white-box{
+    position: absolute;    
+    width: 300px;
+    height: 270px;   
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;      
+    margin-top: -800px;
+    background: #FFFFFF;
+    border-radius: 2%;
+    text-align: center;    
+    z-index: 4;
+}
+
+.dead-msg{
+    margin-top: 5%; 
+    text-align: center;
+    font-family: luckiest;
+    font-size: 36px;
+    color: #000000;
+   
+}
+
+.white-box img {    
+    width: 300px;
+    height: 230px;    
+}
+
+@keyframes drop-white{
+    0%{}
+    70%{transform: translateY(730px)}
+    100%{transform: translateY(680px)}
 }
 
 .instructions-msg{
@@ -105,8 +139,8 @@ body{
 
 @keyframes drop-box {
     0%{}
-    70%{transform: translateY(530px)}
-    100%{transform: translateY(480px)}
+    70%{transform: translateY(55vh)}
+    100%{transform: translateY(50vh)}
 }
 
 .car{

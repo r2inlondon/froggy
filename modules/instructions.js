@@ -20,9 +20,8 @@ export function clearInstructions(){
 }
 
 export function dead(){
-    orangeBox.innerHTML = `<p>Frog is Dead!</p>`;
+    const deadMsg = document.querySelector('.white-box');
 
-    orangeBox.style.display = 'inline';
-    orangeBox.style.animation = 'drop-box 0.5s ease forwards'; 
+    deadMsg.style.animation = 'drop-white 1s ease forwards'; 
 
 }
