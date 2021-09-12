@@ -60,15 +60,19 @@ export function releasedKey(e){
 }
 
 export function notification(message){
-    console.log('message');
-    
+    // stop keyboard events    
     window.removeEventListener('keydown', moveFrog);
     window.removeEventListener('keyup', releasedKey); 
     
     stopAnimation();
     
     // alert(`${message}`)
-    dead();
+    const whiteBox = document.querySelector('.white-box');
+
+    whiteBox.innerHTML = `${message}`
+
+    whiteBox.style.animation = 'drop-white 1s ease forwards'; 
+    
     // reload game
     // location.reload();
 }

@@ -65,7 +65,8 @@ export default class Car {
             this.y < yFrog + frogSize &&
             this.y + carHeight > yFrog
             ){
-            setTimeout (() => {notification('Frog is dead')}, 5);
+                const deadMessage = '<p class="dead-msg">Froggy is dead</p><img src="./img/web/dead-frog2.png" alt="dead frog">';
+            setTimeout (() => {notification(deadMessage)}, 5);
             // notification('Frog is dead');
         }
     }

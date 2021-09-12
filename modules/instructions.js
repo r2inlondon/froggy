@@ -20,8 +20,10 @@ export function clearInstructions(){
 }
 
 export function dead(){
-    const deadMsg = document.querySelector('.white-box');
+    const whiteBox = document.querySelector('.white-box');
 
-    deadMsg.style.animation = 'drop-white 1s ease forwards'; 
+    whiteBox.innerHTML = `<p class="dead-msg">Froggy is dead</p><img src="./img/web/dead-frog2.png" alt="dead frog">`
+
+    whiteBox.style.animation = 'drop-white 1s ease forwards'; 
 
 }
