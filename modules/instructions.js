@@ -1,19 +1,22 @@
 import { countDown } from "./timer.js";
+import {notification} from "./frog.js";
 
-const orangeBox = document.querySelector('.orange-box');
+const whiteBox = document.querySelector('.white-box');
 
 export function instructionsUp(){
-    
-    orangeBox.style.animation = 'drop-box 0.5s ease forwards';        
+
+    const instructions = '<p class="instructions-msg">Use arrow keys to move frogy</p><img class="arrows" src="./img/web/arrowKeys2.png" alt="Keyboard Keys">';
+
+    notification(instructions);
 }
 
 export function clearInstructions(){
     
-    while(orangeBox.firstChild){
-        orangeBox.removeChild(orangeBox.firstChild);
+    while(whiteBox.firstChild){
+        whiteBox.removeChild(whiteBox.firstChild);
     }
         
-    orangeBox.innerHTML = `<p class="numbers">3</p>`;
+    whiteBox.innerHTML = `<p class="numbers">3</p>`;
 
     countDown();
     
