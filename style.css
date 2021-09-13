@@ -41,7 +41,7 @@ body{
     width: 100px;
     height: 100px;
     top: 175px;
-    opacity: 0.6;    
+    opacity: 0.4;    
     z-index: 1;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     animation: moveRight 30s infinite both linear;
@@ -53,7 +53,7 @@ body{
     width: 100px;
     height: 100px;
     top: 130px;   
-    opacity: 0.5;    
+    opacity: 0.4;    
     z-index: 0;    
     animation: moveRight 50s infinite both reverse linear;
 }
@@ -74,7 +74,7 @@ body{
     height: 200px;
     top: 7%;
     left: 75%;
-    opacity: 0.8;
+    opacity: 0.7;
     z-index: 1;
 }
 
