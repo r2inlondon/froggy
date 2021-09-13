@@ -54,10 +54,10 @@ body{
     height: 100px;
     top: 95px;   
     opacity: 0.5;    
-    z-index: 0;
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    z-index: 0;    
     animation: moveRight 50s infinite both reverse linear;
 }
+
 
 @keyframes moveRight{
     from { transform: translateX(-300px);}
