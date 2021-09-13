@@ -65,7 +65,10 @@ export default class Car {
             this.y < yFrog + frogSize &&
             this.y + carHeight > yFrog
             ){
-                const message = '<p class="dead-msg">Froggy is dead</p><img src="./img/web/dead-frog2.png" alt="dead frog" class="dead-img"><button class="button-52" role="button">play again?</button>';
+                const message = `<p class="dead-msg">Froggy is dead</p>
+                    <img src="./img/web/dead-frog2.png" alt="dead frog" class="dead-img">
+                    <button class="button-52" role="button">play again?</button>`;
+                    
             setTimeout (() => {notification(message)}, 5);
             
         }

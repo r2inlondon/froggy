@@ -64,31 +64,33 @@ export function notification(message){
     window.removeEventListener('keyup', releasedKey); 
     
     stopAnimation();
-    
-    // alert(`${message}`)
+        
     const whiteBox = document.querySelector('.white-box');
 
     whiteBox.style.display = 'inline';
 
     whiteBox.innerHTML = `${message}`
 
-    whiteBox.style.animation = 'drop-white 1s ease forwards'; 
+    whiteBox.style.animation = 'drop-white 1s ease forwards';
 
-    if(whiteBox.childNodes[2].className === "button-52"){startAgain()}; 
-    
+    whiteBox.childNodes.forEach(node => {
+        
+        if(node.className === "button-52"){startAgain()};  
+    });    
 }
 
 // check if you won
 function didYouWin(yFrog){   
     if(yFrog < 5){
-        const message = '<p class="dead-msg">you win!</p><img src="./img/web/win-frog.png" alt="dead frog" class="win-img"><button class="button-52" role="button">play again?</button>';
+        const message = `<p class="dead-msg">you win!</p>
+            <img src="./img/web/win-frog.png" alt="dead frog" class="win-img">
+            <button class="button-52" role="button">play again?</button>`;
         setTimeout (() => {notification(message)}, 50);
         // setTimeout(notification, 100, 'YOU WIN');        
     }
 }
 
-function startAgain(){
-    console.log('Start Again?')
+function startAgain(){    
     const button = document.querySelector('.button-52');
 
     button.addEventListener('click', () =>{ 
