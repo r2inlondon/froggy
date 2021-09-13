@@ -83,7 +83,7 @@ body{
 
 .white-box{
     position: absolute;    
-    width: 390px;
+    width: 370px;
     height: 395px;   
     left: 50%;
     top: -50%;
@@ -163,14 +163,26 @@ body{
     margin-bottom: 30px;
 }
 
-.arrows {    
+.arrow{
+    color: #FF9A3C;
+}
+
+.froggy{
+    color: #96BC22;
+}
+
+.cross{
+    color: #55C9D9;
+}
+
+.arrow-keys {    
     width: 212px;
     height: 138px;    
 }
 
 .numbers{
     font-family: luckiest;
-    font-size: 250px;
+    font-size: 240px;
     height: 100%;
     color: #000000;        
     margin-top: 5%;

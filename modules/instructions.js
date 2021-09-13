@@ -5,8 +5,9 @@ const whiteBox = document.querySelector('.white-box');
 
 export function instructionsUp(){
 
-    const instructions = `<p class="instructions-msg">Use arrow keys to help frogy to cross the road</p>
-        <img class="arrows" src="./img/web/arrowKeys2.png" alt="Keyboard Keys">`;
+    const instructions = `
+        <p class="instructions-msg">Use <a class="arrow">arrow</a> keys to help <a class="froggy">froggy</a> to <a class="cross">cross</a> the road</p>
+        <img class="arrow-keys" src="./img/web/arrowKeys2.png" alt="Keyboard Keys">`;
 
     notification(instructions);
 }
