@@ -36,12 +36,14 @@ export function stopAnimation(){
 }
 
 export function stopGame(){
-    console.log('stopGame');
+    // stop animation
     running = false;
+    // release keys from memory
+    window.addEventListener('keyup', releasedKey);
 }
 
 export function restartGame(){
-    console.log('restartGame');
+    
     running = true;
 
 }

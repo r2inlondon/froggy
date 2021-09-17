@@ -10,8 +10,7 @@ export let xFrog = 143, yFrog = 134, frogSize = 16, bottomLimit = myCanvas.heigh
 
 
 export function resetFrog(){
-    xFrog = 143, yFrog = 134;
-    console.log({xFrog, yFrog});
+    xFrog = 143, yFrog = 134;    
 }
 
 
@@ -27,44 +26,40 @@ export function drawFrogImage(x,y){
 }
 
 export function moveFrog(e){
-    console.log('before',{xFrog, yFrog});
+    
     // store any key pressed
     keys[e.keyCode] = true;
     // Left - canvas limit
     if(keys[37] && xFrog > 14){
         // left frog's jump length
         xFrog -= xJump;
-        console.log({xFrog, yFrog});
+        
     }
     // right - canvas limit
     if(keys[39] && xFrog < 266){
         // right frog's jump length
         xFrog += xJump;
-        console.log({xFrog, yFrog});
+        
     }
-    // down - canvas limit
+    // up - canvas limit
     if(keys[38]){
         // down frog's jump length
         yFrog -= yJump;
-        console.log({xFrog, yFrog});
+        
     }
-    // up - canvas limit
+    // down - canvas limit
     if(keys[40] && yFrog < bottomLimit ){
         // up frog's jump length
         yFrog += yJump;
-        console.log({xFrog, yFrog});
+        
     }    
-    
-    
-    
-
     drawFrogImage(xFrog, yFrog)
 
     e.preventDefault();
 }
 
 export function releasedKey(e){
-    // mark keys that were released
+    // release keys from memory
     keys[e.keyCode] = false;
 }
 

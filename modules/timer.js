@@ -17,7 +17,9 @@ export function countDown(){
 
     let secondsLeft = 3;
 
-    counting = setInterval(() => {                
+    counting = setInterval(() => {
+        window.addEventListener('keyup', releasedKey); 
+            
         // magic happens in this line
         secondsLeft = Math.round((then - Date.now()) / 1000);
         // render numbers
@@ -28,7 +30,7 @@ export function countDown(){
             numbers.innerText = 'Go!';
             // setTimeout(playGame, 1000);
             setTimeout(() =>{
-                const canvas = document.querySelector('.game');
+                const gameArea = document.querySelector('.game');
                 const whiteBox = document.querySelector('.white-box');
 
                 // Triger Event listers
@@ -36,7 +38,7 @@ export function countDown(){
                 window.addEventListener('keydown', moveFrog);
 
                 whiteBox.style.display = 'none';
-                canvas.style.display = 'inline';
+                gameArea.style.display = 'inline';
             },1000)
         };
                                      
