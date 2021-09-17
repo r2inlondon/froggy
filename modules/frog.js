@@ -105,6 +105,8 @@ function startAgain(){
     const button = document.querySelector('.button-52');
 
     button.addEventListener('click', () =>{ 
+
+        document.querySelector('.game').style.display = 'none';
                 
         // reload game
         // location.reload();
