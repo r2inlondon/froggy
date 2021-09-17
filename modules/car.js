@@ -1,4 +1,5 @@
 import { myCanvas, ctx, xFrog, frogSize, yFrog, notification } from "./frog.js";
+import {stopAnimation, stopGame} from '../main.js'
 
 // Car's dimensions
 let carWidth = 30, carHeight = 20;

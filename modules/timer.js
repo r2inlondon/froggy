@@ -1,5 +1,6 @@
 
-    import {playGame} from "../main.js"
+    import {playGame, restartGame} from "../main.js"
+    import {moveFrog, releasedKey} from "./frog.js"
     
     let counting;
 
@@ -11,6 +12,7 @@ export function countDown(){
     // Convert the seconds (parameter) into miliseconds
     const then = now + 3 * 1000;
     // Preload game in the background
+    
     playGame();
 
     let secondsLeft = 3;
@@ -28,6 +30,10 @@ export function countDown(){
             setTimeout(() =>{
                 const canvas = document.querySelector('.game');
                 const whiteBox = document.querySelector('.white-box');
+
+                // Triger Event listers
+                window.addEventListener('keyup', releasedKey); 
+                window.addEventListener('keydown', moveFrog);
 
                 whiteBox.style.display = 'none';
                 canvas.style.display = 'inline';

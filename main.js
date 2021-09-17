@@ -1,14 +1,14 @@
 // import Modules
 import Car, { laneDirectionLeft, laneDirectionRight } from "./modules/car.js";
-import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog} from "./modules/frog.js"
+import {myCanvas, ctx, drawFrogImage, moveFrog, releasedKey, xFrog, yFrog, resetFrog} from "./modules/frog.js"
 import { drawMotorway } from "./modules/motorway.js";
 import {blinking, stopBlinking} from "./modules/blinking.js";
 import { instructionsUp, clearInstructions } from "./modules/instructions.js";
 
-let playing;
+let playing, running = false;
 
 // animate canvas 
-function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){
+function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3){    
     // clear frog and cars previous position
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     // Draw motherWay
@@ -25,22 +25,38 @@ function animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight
 
     drawFrogImage(xFrog, yFrog);
 
-    playing = window.requestAnimationFrame(() => animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3));       
+    if(running === true){
+        
+        playing = window.requestAnimationFrame(() => animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3));       
+    }
 }
 
 export function stopAnimation(){
     window.cancelAnimationFrame(playing);
 }
 
+export function stopGame(){
+    console.log('stopGame');
+    running = false;
+}
+
+export function restartGame(){
+    console.log('restartGame');
+    running = true;
+
+}
 
 
-let gameOn = false;
+
+// let gameOn = false;
 
 export function playGame(){     
     console.log('Pre-load game');
-    // Triger Event listers
-    window.addEventListener('keydown', moveFrog);
-    window.addEventListener('keyup', releasedKey); 
+    resetFrog();
+    restartGame();
+    // // Triger Event listers
+    // window.addEventListener('keydown', moveFrog);
+    // window.addEventListener('keyup', releasedKey); 
 
     const   leftCar1 = laneDirectionLeft(3, 14, 0.5),  
             carsRight1 =  laneDirectionRight(2,34,1),
@@ -51,10 +67,9 @@ export function playGame(){
     
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
-    if(gameOn === false){
+    // if(gameOn === false){
         animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3);
-        gameOn = true;
-    }            
+        // gameOn = true;}            
 
 };
 
@@ -62,7 +77,7 @@ export function playGame(){
 // start game click
 const startGame = document.querySelector('.game-text');
 // get text blinking
-blinking(startGame);
+// blinking(startGame);
 // get game instructions
 startGame.addEventListener('click', () =>{
     // hide start game
