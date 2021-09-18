@@ -48,17 +48,12 @@ export function restartGame(){
 
 }
 
-
-
-// let gameOn = false;
-
-export function playGame(){     
+export function playGame(){
     console.log('Pre-load game');
+    // reset frog position
     resetFrog();
+    
     restartGame();
-    // // Triger Event listers
-    // window.addEventListener('keydown', moveFrog);
-    // window.addEventListener('keyup', releasedKey); 
 
     const   leftCar1 = laneDirectionLeft(3, 14, 0.5),  
             carsRight1 =  laneDirectionRight(2,34,1),
@@ -69,27 +64,28 @@ export function playGame(){
     
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     
-    // if(gameOn === false){
-        animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3);
-        // gameOn = true;}            
-
+    animate(leftCar1, carsRight1, leftCar2, carsRight2, leftCar3, carsRight3);
+    
 };
 
 
 // start game click
-const startGame = document.querySelector('.game-text');
+const gameText = document.querySelector('.game-text');
 // get text blinking
 blinking();
 
 
-startGame.addEventListener('click', () =>{
+gameText.addEventListener('click', startGame);
+window.addEventListener('keyup', startGame);
+
+function startGame(){
+    window.removeEventListener('keyup', startGame);
     // stop message instructions
     stopBlinking();
     // get instructions
     instructionsUp();    
     // clear instructions after 4 seconds
     setTimeout(clearInstructions, 4000);
-        
-});
+}
 
 
