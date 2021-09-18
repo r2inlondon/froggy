@@ -76,7 +76,7 @@ blinking();
 
 
 gameText.addEventListener('click', startGame);
-window.addEventListener('keyup', startGame);
+// window.addEventListener('keyup', startGame);
 
 function startGame(){
     window.removeEventListener('keyup', startGame);

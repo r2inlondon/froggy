@@ -255,17 +255,17 @@ body{
     width: 129px;
     height: 30%;
     top: 38%;
-    left: 40%;    
+    left: 42%;    
     z-index: 2;    
 }
 
-.logo{    
+.frog{    
     position: absolute;
     background-image: url(./img/web/chilling_frog.png);
     background-repeat: no-repeat; 
     width: 580px;
     height: 210px;
-    top: 50%;
+    top: 54%;
     left: 50%;
     margin-left: -290px;
     margin-top: 20px;
@@ -295,8 +295,8 @@ body{
     border:1px solid #000000;        
 }
 
-/* if the screen is less than 800px apply this rules */
-@media screen and (max-height: 800px) {
+/* if the screen is less than 768px apply this rules */
+@media screen and (max-height: 768px) {
     .start-button{        
         padding-top: 80px;        
         width: 195px;    
@@ -310,6 +310,31 @@ body{
         overflow: hidden;
         opacity: 0;   
     }
+    .car{
+        width: 129px;
+        height: 15%;
+        top: 44%;
+        left: 35%;   
+    }
+    .frog{
+        width: 580px;
+        height: 210px;
+        top: 50%;
+        left: 50%;
+    }
+    .cloud-1{
+        width: 60px;
+        height: 60px;
+        top: 150px;
+    }
+    .cloud-3{
+        width: 170px;
+        height: 170px;
+    }
+    .cloud-4{
+        width: 170px;
+        height: 170px;
+    }
     .game {
         margin-top: -250px;
         margin-left: -350px;
@@ -317,5 +342,61 @@ body{
     #myCanvas{
         width: 700px;
         height: 500px;
+    }
+}
+
+@media screen and (min-height: 1160px){
+    .start-button{
+        padding-top: 7%;        
+        width: 432px;    
+        /* height: 280px;  */
+    }
+
+    .start-button p {                
+        font-size: 150px;
+       
+        /* line-height: 1em;
+        height: 1.9em; */
+                
+    }
+    .car{
+        /* width: 129px;
+        height: 15%; */
+        top: 37%;
+        left: 45%;   
+    }
+
+    .frog{ 
+        top: 62%;        
+    }
+    .cloud-1{
+        width: 160px;
+        height: 160px;
+        top: 59%;
+    }
+    .cloud-2{
+        width: 160px;
+        height: 160px;
+        top: 39%;
+    }
+    .cloud-3{
+        width: 170px;
+        height: 170px;
+    }
+    .cloud-3{
+        width: 300px;
+        height: 300px;
+    }
+    .cloud-4{
+        width: 300px;
+        height: 300px;
+    }
+    .game {
+        margin-top: -600px;
+        margin-left: -650px;
+    }
+    #myCanvas{
+        width: 1300px;
+        height: 1100px;
     }
 }
