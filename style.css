@@ -128,7 +128,7 @@ body{
     width: 370px;
     height: 395px;   
     left: 50%;
-    top: -50%;
+    top: -43%;
     margin-left: -190px;      
     margin-top: -164px;
     background: #FFFFFF;
@@ -264,7 +264,7 @@ body{
     display: none;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 47%;
     margin-top: -350px;
     margin-left: -400px;
     z-index: 3;
@@ -278,8 +278,8 @@ body{
 #myCanvas {
     position: relative;                
     margin: auto;
-    width: 800px;
-    height: 600px;
+    width: 900px;
+    height: 700px;
     border:1px solid #000000;        
 }
 
