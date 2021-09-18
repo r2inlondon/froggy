@@ -79,11 +79,14 @@ export function playGame(){
 // start game click
 const startGame = document.querySelector('.game-text');
 // get text blinking
-// blinking(startGame);
+blinking();
+
 // get game instructions
 startGame.addEventListener('click', () =>{
-    // hide start game
-    startGame.style.display = 'none';
+    // // hide start game
+    // startGame.style.display = 'none';
+
+    stopBlinking();
     // get instructions
     instructionsUp();    
 

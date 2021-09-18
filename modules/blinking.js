@@ -1,10 +1,17 @@
 
-export function blinking(element){
-    setInterval(() => {
-        element.style.opacity = (element.style.opacity == 1 ? 0 : 1);
+const startGame = document.querySelector('.game-text');
+
+let blink;
+
+export const blinking = () =>{
+    blink = setInterval(() => {
+        startGame.style.opacity = (startGame.style.opacity == 1 ? 0 : 1);
     }, 700);
 }
 
-export function stopBlinking(element){
-    clearInterval(element);
+export function stopBlinking(){
+    // hide start game
+    startGame.style.display = 'none';
+
+    clearInterval(blink);
 }
