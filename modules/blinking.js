@@ -1,17 +1,19 @@
 
 const startGame = document.querySelector('.game-text');
 
-let blink;
+let blinkText;
 
+// get text to blink
 export const blinking = () =>{
-    blink = setInterval(() => {
+    blinkText = setInterval(() => {
         startGame.style.opacity = (startGame.style.opacity == 1 ? 0 : 1);
     }, 700);
 }
 
+// stop blinking
 export function stopBlinking(){
     // hide start game
     startGame.style.display = 'none';
 
-    clearInterval(blink);
+    clearInterval(blinkText);
 }

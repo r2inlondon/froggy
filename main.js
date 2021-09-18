@@ -81,15 +81,13 @@ const startGame = document.querySelector('.game-text');
 // get text blinking
 blinking();
 
-// get game instructions
-startGame.addEventListener('click', () =>{
-    // // hide start game
-    // startGame.style.display = 'none';
 
+startGame.addEventListener('click', () =>{
+    // stop message instructions
     stopBlinking();
     // get instructions
     instructionsUp();    
-
+    // clear instructions after 4 seconds
     setTimeout(clearInstructions, 4000);
         
 });
