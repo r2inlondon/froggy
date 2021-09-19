@@ -1,2 +1,2 @@
 # froggy
-Classic game from 80s and it was make with pure vanilla javascript.
+Classic game from 80s and it was made with pure vanilla javascript.
