@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Froggy</title>
-    <link rel="shortcut icon" href="img/frog.svg"/>
-</head>
+    <link rel="shortcut icon" href="img/frog.svg" />
+  </head>
 
-    <body>
-        <div id="preloader"></div>
+  <body>
+    <div id="preloader"></div>
 
-       <div class="page">
+    <div class="page">
+      <div class="clouds">
+        <img src="./img/web/cloud2.png" alt="clouds" class="cloud-1" />
+        <img src="./img/web/cloud2.png" alt="clouds" class="cloud-2" />
+        <img src="./img/web/cloud2.png" alt="clouds" class="cloud-3" />
+        <img src="./img/web/cloud2.png" alt="clouds" class="cloud-4" />
+      </div>
 
-           <div class="clouds">
-                <img src="./img/web/cloud2.png" alt="clouds" class="cloud-1">
-                <img src="./img/web/cloud2.png" alt="clouds" class="cloud-2">
-                <img src="./img/web/cloud2.png" alt="clouds" class="cloud-3">
-                <img src="./img/web/cloud2.png" alt="clouds" class="cloud-4">
-           </div>
+      <div class="start-button">
+        <p class="game-text">Start Game</p>
+      </div>
 
-           <div class="start-button">
-               <p class="game-text">Start Game</p>
-           </div>
+      <div class="instructions">
+        <div class="white-box"></div>
+      </div>
 
-           <div class="instructions">               
-                <div class="white-box"></div>
-           </div>
+      <div class="car"></div>
+      <div class="frog"></div>
+      <div class="zebra"></div>
 
-            <div class="car"></div>
-            <div class="frog"></div>
-            <div class="zebra"></div>
+      <div class="game">
+        <div class="game-area">
+          <canvas id="myCanvas">
+            Your browser does not support the HTML canvas tag.
+          </canvas>
+        </div>
+      </div>
+    </div>
 
-            <div class="game">                
-                <div class="game-area">
-                    <canvas id="myCanvas">
-                        Your browser does not support the HTML canvas tag.
-                    </canvas>
-               </div>
-            </div>
-                
-       </div>
+    <script>
+      const loader = document.getElementById("preloader");
 
-        
-      
-        <script>
-            const loader = document.getElementById('preloader');
+      window.addEventListener("load", function () {
+        loader.style.display = "none";
+      });
+    </script>
 
-            window.addEventListener('load', function(){
-                loader.style.display = 'none';
-            })
-
-        </script>
-
-        <script type="module" src="main.js"></script>
-        
-    </body>
-
-
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

@@ -1,430 +1,439 @@
-*,*::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#preloader{
-    background: #FFFFFF url(/img/web/loader.gif) no-repeat center center;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 999;
+#preloader {
+  background: #ffffff url(/img/web/loader.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
 }
 
 @font-face {
-    font-family: luckiest;
-    src: url('./fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf');
+  font-family: luckiest;
+  src: url("./fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf");
 }
 
-body{
-    background-color: #000000;
+body {
+  background-color: #000000;
 }
 
-.page{
-    background-color: #A3F9FF ;
-    margin:auto;
-    width: 80vw;
-    height: 100vh;
-    position: relative;
+.page {
+  background-color: #a3f9ff;
+  margin: auto;
+  width: 80vw;
+  height: 100vh;
+  position: relative;
 }
 
-.clouds{
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    overflow: hidden;
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
 }
 
-.cloud-1{
-    position: relative;
-    width: 100px;
-    height: 100px;
-    top: 175px;
-    opacity: 0.4;    
-    z-index: 1;
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    animation: moveRight 30s infinite both linear;
+.cloud-1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  top: 175px;
+  opacity: 0.4;
+  z-index: 1;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: moveRight 30s infinite both linear;
 }
 
-.cloud-2{
-    position: relative;
-    /* position: absolute; */
-    width: 100px;
-    height: 100px;
-    top: 130px;   
-    opacity: 0.4;    
-    z-index: 0;    
-    animation: moveRight 50s infinite both reverse linear;
+.cloud-2 {
+  position: relative;
+  /* position: absolute; */
+  width: 100px;
+  height: 100px;
+  top: 130px;
+  opacity: 0.4;
+  z-index: 0;
+  animation: moveRight 50s infinite both reverse linear;
 }
 
-.cloud-3{
-    position: absolute;
-    width: 220px;
-    height: 200px;
-    top: 5%;
-    left: 15%;
-    opacity: 0.8;
-    z-index: 1;
+.cloud-3 {
+  position: absolute;
+  width: 220px;
+  height: 200px;
+  top: 5%;
+  left: 15%;
+  opacity: 0.8;
+  z-index: 1;
 }
 
-.cloud-4{
-    position: absolute;
-    width: 220px;
-    height: 200px;
-    top: 7%;
-    left: 75%;
-    opacity: 0.7;
-    z-index: 1;
+.cloud-4 {
+  position: absolute;
+  width: 220px;
+  height: 200px;
+  top: 7%;
+  left: 75%;
+  opacity: 0.7;
+  z-index: 1;
 }
 
-@keyframes moveRight{
-    from { transform: translateX(-300px);}
-    to { transform: translateX(1450px);}
+@keyframes moveRight {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(1450px);
+  }
 }
 
-.zebra{
-    position: absolute;
-    bottom: 0;
-    background-image: url("./img/web/zebra-crossing.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;    
-    width: 100%;
-    height: 80%;
-    z-index: 1;
+.zebra {
+  position: absolute;
+  bottom: 0;
+  background-image: url("./img/web/zebra-crossing.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80%;
+  z-index: 1;
 }
 
-.start-button{
-    /* display: none; */
-    position: absolute;
-    margin: auto;
-    padding-top: 100px;
-    position: relative;
-    width: 300px;    
-    height: 280px;
-    z-index: 2;
+.start-button {
+  /* display: none; */
+  position: absolute;
+  margin: auto;
+  padding-top: 100px;
+  position: relative;
+  width: 300px;
+  height: 280px;
+  z-index: 2;
 }
 
 .start-button p {
-    text-align: center;
-    font-family: luckiest;
-    font-size: 100px;
-    color: #EB5329;
-    line-height: 1em;
-    height: 1.9em;
-    overflow: hidden;
-    opacity: 0;   
+  text-align: center;
+  font-family: luckiest;
+  font-size: 100px;
+  color: #eb5329;
+  line-height: 1em;
+  height: 1.9em;
+  overflow: hidden;
+  opacity: 0;
 }
 
-.game-text:hover{
-    cursor: pointer;
+.game-text:hover {
+  cursor: pointer;
 }
 
-
-
-.white-box{
-    position: absolute;    
-    width: 370px;
-    height: 395px;   
-    left: 50%;
-    top: -43%;
-    margin-left: -190px;      
-    margin-top: -164px;
-    background: #FFFFFF;
-    opacity: 0.9;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 2%;
-    text-align: center;
-    z-index: 4;
+.white-box {
+  position: absolute;
+  width: 370px;
+  height: 395px;
+  left: 50%;
+  top: -43%;
+  margin-left: -190px;
+  margin-top: -164px;
+  background: #ffffff;
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2%;
+  text-align: center;
+  z-index: 4;
 }
 
-.dead-msg{
-    margin-top: 5%; 
-    text-align: center;
-    font-family: luckiest;
-    font-size: 36px;
-    color: #000000;
-   
+.dead-msg {
+  margin-top: 5%;
+  text-align: center;
+  font-family: luckiest;
+  font-size: 36px;
+  color: #000000;
 }
 
-.dead-img{    
-    width: 300px;
-    height: 230px;
-    position: relative; 
+.dead-img {
+  width: 300px;
+  height: 230px;
+  position: relative;
 }
 
-.win-img{
-    width: 100%;
-    height: 230px;
+.win-img {
+  width: 100%;
+  height: 230px;
 }
 
 .button-52 {
-    font-family: luckiest;
-    font-size: 35px;  
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
-    cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+  font-family: luckiest;
+  font-size: 35px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ff9a3c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@keyframes drop-white {
+  0% {
   }
-  
-  .button-52:after {
-    content: "";
-    background-color: #FF9A3C;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
+  100% {
+    transform: translateY(90vh);
   }
-  
-  .button-52:hover:after {
-    top: 0px;
-    left: 0px;
-  }
-  
-
-@keyframes drop-white{
-    0%{}    
-    100%{transform: translateY(90vh)}
 }
 
-.instructions-msg{
-    margin-top: 5%; 
-    text-align: center;
-    font-family: luckiest;
-    font-size: 36px;
-    color: #000000;
-    margin-bottom: 30px;
+.instructions-msg {
+  margin-top: 5%;
+  text-align: center;
+  font-family: luckiest;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 30px;
 }
 
-.arrow{
-    color: #FF9A3C;
+.arrow {
+  color: #ff9a3c;
 }
 
-.froggy{
-    color: #96BC22;
+.froggy {
+  color: #96bc22;
 }
 
-.cross{
-    color: #55C9D9;
+.cross {
+  color: #55c9d9;
 }
 
-.arrow-keys {    
-    width: 212px;
-    height: 138px;    
+.arrow-keys {
+  width: 212px;
+  height: 138px;
 }
 
-.numbers{
-    font-family: luckiest;
-    font-size: 240px;
-    height: 100%;
-    color: #000000;        
-    margin-top: 5%;
+.numbers {
+  font-family: luckiest;
+  font-size: 240px;
+  height: 100%;
+  color: #000000;
+  margin-top: 5%;
 }
 
 @keyframes drop-box {
-    0%{}
-    70%{transform: translateY(65vh)}
-    100%{transform: translateY(60vh)}
+  0% {
+  }
+  70% {
+    transform: translateY(65vh);
+  }
+  100% {
+    transform: translateY(60vh);
+  }
 }
 
-.car{
-    position: absolute;
-    background-image: url(./img/web/frontCar.png);
-    background-repeat: no-repeat; 
-    width: 129px;
-    height: 30%;
-    top: 38%;
-    left: 42%;    
-    z-index: 2;    
+.car {
+  position: absolute;
+  background-image: url(./img/web/frontCar.png);
+  background-repeat: no-repeat;
+  width: 129px;
+  height: 30%;
+  top: 38%;
+  left: 42%;
+  z-index: 2;
 }
 
-.frog{    
-    position: absolute;
-    background-image: url(./img/web/chilling_frog.png);
-    background-repeat: no-repeat; 
-    width: 580px;
-    height: 210px;
-    top: 54%;
-    left: 50%;
-    margin-left: -290px;
-    margin-top: 20px;
-    z-index: 2;    
+.frog {
+  position: absolute;
+  background-image: url(./img/web/chilling_frog.png);
+  background-repeat: no-repeat;
+  width: 580px;
+  height: 210px;
+  top: 54%;
+  left: 50%;
+  margin-left: -290px;
+  margin-top: 20px;
+  z-index: 2;
 }
 
 .game {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 47%;
-    margin-top: -350px;
-    margin-left: -400px;
-    z-index: 3;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  margin-top: -350px;
+  margin-left: -400px;
+  z-index: 3;
 }
 
-.game-area{
-    position: relative;            
-    margin: auto;
+.game-area {
+  position: relative;
+  margin: auto;
 }
 
 #myCanvas {
-    position: relative;                
-    margin: auto;
-    width: 900px;
-    height: 700px;
-    border:1px solid #000000;        
+  position: relative;
+  margin: auto;
+  width: 900px;
+  height: 700px;
+  border: 1px solid #000000;
 }
 
 /* if the screen is less than 768px apply this rules */
 @media screen and (max-height: 768px) {
-    .start-button{        
-        padding-top: 80px;        
-        width: 195px;    
-        height: 215px;        
-    }
-    .start-button p {                
-        font-size: 70px;
-        color: #EB5329;
-        line-height: 1em;
-        height: 1.9em;
-        overflow: hidden;
-        opacity: 0;   
-    }
-    .car{
-        width: 129px;
-        height: 15%;
-        top: 44%;
-        left: 35%;   
-    }
-    .frog{
-        width: 580px;
-        height: 210px;
-        top: 50%;
-        left: 50%;
-    }
-    .cloud-1{
-        width: 60px;
-        height: 60px;
-        top: 150px;
-    }
-    .cloud-3{
-        width: 170px;
-        height: 170px;
-    }
-    .cloud-4{
-        width: 170px;
-        height: 170px;
-    }
-    .game {
-        margin-top: -250px;
-        margin-left: -350px;
-    }
-    #myCanvas{
-        width: 700px;
-        height: 500px;
-    }
+  .start-button {
+    padding-top: 80px;
+    width: 195px;
+    height: 215px;
+  }
+  .start-button p {
+    font-size: 70px;
+    color: #eb5329;
+    line-height: 1em;
+    height: 1.9em;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .car {
+    width: 129px;
+    height: 15%;
+    top: 44%;
+    left: 35%;
+  }
+  .frog {
+    width: 580px;
+    height: 210px;
+    top: 50%;
+    left: 50%;
+  }
+  .cloud-1 {
+    width: 60px;
+    height: 60px;
+    top: 150px;
+  }
+  .cloud-3 {
+    width: 170px;
+    height: 170px;
+  }
+  .cloud-4 {
+    width: 170px;
+    height: 170px;
+  }
+  .game {
+    margin-top: -250px;
+    margin-left: -350px;
+  }
+  #myCanvas {
+    width: 700px;
+    height: 500px;
+  }
 }
 
-@media screen and (min-height: 1160px){
-    .start-button{
-        padding-top: 7%;        
-        width: 432px;    
-        /* height: 280px;  */
-    }
+@media screen and (min-height: 1160px) {
+  .start-button {
+    padding-top: 7%;
+    width: 432px;
+    /* height: 280px;  */
+  }
 
-    .start-button p {                
-        font-size: 150px;
-       
-        /* line-height: 1em;
+  .start-button p {
+    font-size: 150px;
+
+    /* line-height: 1em;
         height: 1.9em; */
-                
-    }
-    .car{
-        /* width: 129px;
+  }
+  .car {
+    /* width: 129px;
         height: 15%; */
-        top: 37%;
-        left: 45%;   
-    }
+    top: 37%;
+    left: 45%;
+  }
 
-    .frog{ 
-        top: 62%;        
-    }
-    .cloud-1{
-        width: 160px;
-        height: 160px;
-        top: 59%;
-    }
-    .cloud-2{
-        width: 160px;
-        height: 160px;
-        top: 39%;
-    }
-    .cloud-3{
-        width: 170px;
-        height: 170px;
-    }
-    .cloud-3{
-        width: 300px;
-        height: 300px;
-    }
-    .cloud-4{
-        width: 300px;
-        height: 300px;
-    }
-    .game {
-        margin-top: -600px;
-        margin-left: -650px;
-    }
-    #myCanvas{
-        width: 1300px;
-        height: 1100px;
-    }
-    .white-box{        
-        width: 670px;
-        height: 695px;   
-        left: 44%;
-        top: -60%;             
-    }
-    .instructions-msg{
-        margin-top: 5%;         
-        font-size: 66px;        
-        margin-bottom: 30px;
-    }
-    .arrow-keys {    
-        width: 412px;
-        height: 268px;    
-    }
-    .dead-msg{
-        margin-top: 5%; 
-        text-align: center;
-        font-family: luckiest;
-        font-size: 66px;
-        color: #000000;   
-    }
-    .numbers{
-        font-size: 440px;
-        height: 100%;           
-        margin-top: 5%;
-    }
-    .dead-img{    
-        width: 550px;
-        height: 430px;
-        position: relative; 
-    }
-    .win-img{
-        width: 100%;
-        height: 420px;
-    }
-    .button-52 {       
-        font-size: 65px;  
-        padding: 13px 20px 13px;                
-    }
+  .frog {
+    top: 62%;
+  }
+  .cloud-1 {
+    width: 160px;
+    height: 160px;
+    top: 59%;
+  }
+  .cloud-2 {
+    width: 160px;
+    height: 160px;
+    top: 39%;
+  }
+  .cloud-3 {
+    width: 170px;
+    height: 170px;
+  }
+  .cloud-3 {
+    width: 300px;
+    height: 300px;
+  }
+  .cloud-4 {
+    width: 300px;
+    height: 300px;
+  }
+  .game {
+    margin-top: -600px;
+    margin-left: -650px;
+  }
+  #myCanvas {
+    width: 1300px;
+    height: 1100px;
+  }
+  .white-box {
+    width: 670px;
+    height: 695px;
+    left: 44%;
+    top: -60%;
+  }
+  .instructions-msg {
+    margin-top: 5%;
+    font-size: 66px;
+    margin-bottom: 30px;
+  }
+  .arrow-keys {
+    width: 412px;
+    height: 268px;
+  }
+  .dead-msg {
+    margin-top: 5%;
+    text-align: center;
+    font-family: luckiest;
+    font-size: 66px;
+    color: #000000;
+  }
+  .numbers {
+    font-size: 440px;
+    height: 100%;
+    margin-top: 5%;
+  }
+  .dead-img {
+    width: 550px;
+    height: 430px;
+    position: relative;
+  }
+  .win-img {
+    width: 100%;
+    height: 420px;
+  }
+  .button-52 {
+    font-size: 65px;
+    padding: 13px 20px 13px;
+  }
 }
