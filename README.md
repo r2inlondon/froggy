@@ -1,4 +1,4 @@
-# froggy
+# Froggy Game
 
 Froggy is an award winning arcade game from 80s. I built a clone of this game using pure vanilla Javascript, CSS and html.
 
